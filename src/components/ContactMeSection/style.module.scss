@@ -1,0 +1,121 @@
+@use '../../styles/colors'; 
+@use '../../styles/mixins'; 
+@use '../../styles/medias' as *; 
+
+
+.contactme_section {
+  @include mixins.sectionStyle();
+
+  .content {
+    @include mixins.displayFlex();
+    flex-direction: column;
+
+    .information_box {
+      @include mixins.displayFlex(center, flex-start);
+      background-color: colors.$primary-button-background;
+      border-radius: 10px;
+      max-width: 800px;
+      padding: 30px;
+      gap: 20px;
+
+      @include media('tablet') {
+        flex-direction: column;
+      }
+
+      @include media('phone') {
+        padding: 15px;
+      }
+
+      .contact_info {
+        @include mixins.displayFlex();
+        gap: 5px;
+
+        .icon {
+          width: 30px;
+          height: 30px;
+          @include mixins.whiteFilter();
+
+          @include media('phone') {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .title_box {
+          
+          h3 {
+            color: colors.$primary-text;
+            font-size: 1em;
+
+            @include media('phone') {
+              font-size: .875em;
+            }
+          }
+
+          span {
+            color: colors.$primary-text;
+            font-size: .875em;
+
+            @include media('phone') {
+              font-size: .750em;
+            }
+          }
+        }
+      }
+    }
+
+    .email_form {
+      max-width: 600px;
+      width: 100%;
+      margin-top: 20px;
+      @include mixins.displayFlex();
+      flex-direction: column;
+      gap: 15px;
+
+      .field {
+        width: 100%;
+        background-color: colors.$field-background;
+        padding: 10px 20px;
+        border-radius: 8px;
+
+        .field_name {
+          color: colors.$field-text;
+          font-size: .875em;
+        }
+
+        .field_input {
+          width: 100%;
+          background-color: transparent;
+          padding: 8px 0px;
+          border: none;
+          outline: none;
+          color: colors.$field-text;
+          font-size: 1em;
+        }
+
+        &.message_field {
+          .field_input {
+            resize: none;
+            height: 250px;
+          }
+        }
+      }
+
+      .submit_button {
+        padding: 8px 12px;
+        background-color: colors.$secondary-button-background;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: .3s;
+        color: white;
+        font-size: 1em;
+        font-weight: 600;
+
+        &:hover {
+          background-color: colors.$secondary-button-background-hover;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use './colors';
+@use './medias' as *;
+
+@mixin displayFlex($justifyContent: center, $alignItems: center) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin whiteFilter() {
+  filter: invert(99%) sepia(67%) saturate(195%) hue-rotate(116deg) brightness(114%) contrast(100%);
+}
+
+@mixin sectionStyle() {
+  width: 100%;
+  min-height: min(100vh, 1000px);
+  padding-top: 40px;
+
+  @include media("desktop") {
+    min-height: auto;
+  }
+
+  .header {
+    margin-bottom: 40px;
+
+    .section_title {
+      font-weight: 600;
+      font-size: 2.5em;
+      color: colors.$primary-text;
+      text-align: center;
+
+      @include media("tablet") {
+        font-size: 2em;
+      }
+    }
+
+    .section_subtitle {
+      font-weight: 600;
+      font-size: 1.3em;
+      color: colors.$secondary-text;
+      text-align: center;
+
+      @include media("tablet") {
+        font-size: 1.2em;
+      }
+    }
+  }
+}

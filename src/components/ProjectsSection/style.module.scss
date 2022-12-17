@@ -1,0 +1,343 @@
+@use '../../styles/colors'; 
+@use '../../styles/mixins'; 
+@use '../../styles/medias' as *;
+
+.projects_section {
+  @include mixins.sectionStyle();
+}
+
+.content {
+  .tabs {
+    @include mixins.displayFlex();
+    gap: 15px;
+    color: colors.$primary-text;
+
+    span {
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: .3s;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        color: #fff;
+      }
+
+      &.active {
+        color: #fff;
+        border-color: #fff;
+      }
+    }
+  } 
+  
+}
+
+/* --------------------- Main Projects --------------------- */
+.main_projects {
+  .banners {
+    position: relative;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    padding: 0 30px;
+    overflow: hidden;
+
+    @include media("desktop") {
+      width: 750px;
+      height: 200px;
+    }
+
+    @include media("tablet") {
+      width: 80%;
+      height: 350px;
+    }
+
+    @include media("phone") {
+      height: 400px;
+      width: 100%;
+      padding: 0;
+    }
+
+    .chevron_box {
+      position: absolute;
+      background-color: colors.$dark-transparent-background;
+      padding: 14px 4px;
+      z-index: 100;
+      cursor: pointer;
+      transition: .3s;
+      border-radius: 4px;
+      top: 100px;
+
+      @include media("desktop") {
+        top: 70px;
+      }
+
+
+      &:hover {
+        background-color: colors.$dark-transparent-background-hover;
+      }
+
+      &.forward {
+        right: 0px;
+        padding-right: 2px;
+
+        
+        @include media("tablet") {
+          right: 5px;
+          padding-top: 10px;
+          padding-right: 0px;
+          padding-bottom: 10px;
+          padding-left: 2px
+        }
+      }
+
+      &.backward {
+        left: 0px;
+        padding-left: 2px;
+
+        @include media("tablet") {
+          left: 5px;
+          padding-top: 10px;
+          padding-right: 2px;
+          padding-bottom: 10px;
+          padding-left: 0px
+        }
+
+        div {
+          rotate: -180deg;
+        }
+      }
+
+      div {
+        width: 20px;
+        height: 20px;
+        background-image: url(../../assets/chevron-forward.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        @include mixins.whiteFilter();
+      }
+    }
+
+  }
+
+  .carousel {
+    @include mixins.displayFlex();
+    gap: 5px;
+
+    div {
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background-color: colors.$light-tranparent-background;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        background-color: colors.$light-tranparent-background-hover;
+      }
+
+      &.focus {
+        background-color: colors.$light-tranparent-background-hover;
+      }
+    }
+  }
+}  
+
+/* --------------------- Slide List --------------------- */
+.slide_list {
+  position: absolute;
+  display: flex;
+  top: 0px;
+  left: 0px;
+  transition: .3s ease-out;
+  height: 100%;
+  padding-left: 30px;
+  
+  @include media("desktop") {
+    padding-left: 20px;
+  }
+  
+  @include media("tablet") {
+    width: calc(100% * 4);
+    padding-left: 10px;
+  }
+
+  .slide_item {
+    @include mixins.displayFlex(center, flex-start);
+    gap: 15px;
+    padding: 15px;
+    height: 100%;
+    width: 800px;
+    margin-right: 100px;
+
+    @include media("desktop") {
+      width: 700px;
+      margin-right: 50px; 
+    }
+
+    @include media("tablet") {
+      flex-direction: column;
+      width: calc((100% / 4) - 20px);
+      margin-right: 20px; 
+    }
+
+    .photo_box {
+      @include mixins.displayFlex();
+      height: 100%;
+      border-radius: 10px;
+      max-width: 350px;
+      overflow: hidden;
+
+      @include media("desktop") {
+        max-width: 260px;
+      }
+
+      @include media("tablet") {
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include media("phone") {
+        max-width: 140px;
+        height: 100px;
+      }
+
+      .photo {
+        height: 100%;
+      }
+    }
+
+    .info {
+      position: relative;
+      height: 100%;
+      width: 420px;
+
+      @include media("tablet") {
+        width: 100%;
+      }
+
+      .title {
+        color: colors.$primary-text;
+        font-size: 1.5em;
+
+        @include media("desktop") {
+          font-size: 1.2em;
+        }
+
+        @include media("tablet") {
+          text-align: center;
+        }
+
+        @include media("phone") {
+          font-size: 1em;
+        }
+      }
+
+      .description {
+        color: colors.$secondary-text;
+        font-size: 1.2em;
+
+        @include media("desktop") {
+          font-size: .875em;
+        }
+
+        @include media("phone") {
+          font-size: .75em;
+        }
+      }
+
+      .link {
+        position: absolute;
+        bottom: 0;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: colors.$primary-text;
+        border-bottom: 1px solid transparent;
+        transition: .3s;
+
+        &:hover {
+          border-color: colors.$primary-text;
+        }
+
+        @include media("desktop") {
+          font-size: 1em;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
+
+        @include media("tablet") {
+          bottom: -20px;
+        }
+      }
+    }
+  }
+}
+
+/* --------------------- Latest Projects --------------------- */
+.latest_pojects {
+  padding-top: 30px;
+  .list {
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    justify-content: center;
+
+    @include media("tablet") {
+      grid-template-columns: 280px;
+      grid-template-rows: repeat(4, 100px);
+    }
+
+    @include media("phone") {
+      grid-template-columns: 170px;
+      grid-template-rows: repeat(4, 70px);
+    }
+
+    .item {
+      justify-self: center;
+      align-self: center;
+      width: 100%;
+      height: 100%;
+      @include mixins.displayFlex(center, flex-start);
+      padding-left: 40px;
+      flex-direction: column;
+      border: solid 1px colors.$secondary-text;
+      border-radius: 6px;
+
+      @include media("phone") {
+        align-items: center;
+        padding: 0px;
+      }
+
+      .link {
+        color: #58a6ff;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          border-color: #58a6ff;
+        }
+      }
+
+      .language_box {
+        @include mixins.displayFlex(center, flex-end);
+        gap: 3px;
+        margin-top: 14px;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        .language_name {
+          color: colors.$secondary-text;
+          font-size: .875em;
+        }
+      }
+    }
+  }
+}

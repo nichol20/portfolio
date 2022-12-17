@@ -1,0 +1,19 @@
+@use './mixins';
+@use './colors';
+@use './medias' as *;
+
+.app {
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  @include mixins.displayFlex();
+  flex-direction: column;
+
+  @include media("desktop") {
+    gap: 100px;
+  }
+
+  @include media("tablet") {
+    padding: 10px;
+  }
+}

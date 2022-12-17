@@ -1,0 +1,82 @@
+@use '../../styles/colors'; 
+@use '../../styles/mixins'; 
+@use '../../styles/medias' as *; 
+
+.skills_section {
+  @include mixins.sectionStyle();
+}
+
+.content {
+  width: 100%;
+  @include mixins.displayFlex();
+  flex-direction: column;
+  gap: 20px;
+
+  .category_container {
+    width: 100%;
+    max-width: 1000px;
+    user-select: none;
+
+    .box {
+      @include mixins.displayFlex(flex-start);
+      gap: 15px;
+      cursor: pointer;
+      box-shadow: 0 15px 30px colors.$shadow;
+      z-index: 10;
+      position: relative;
+      padding: 5px 20px;
+      height: 60px;
+
+      .title {
+        font-size: 1.5em;
+        color: colors.$primary-text;
+        font-weight: 500;
+
+        @include media("tablet") {
+          font-size: 1.2em;
+        }
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        @include mixins.whiteFilter();
+
+        @include media("tablet") {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .chevron_icon {
+        margin-left: auto;
+        width: 30px;
+        height: 30px;
+        transition: .3s;
+
+        @include media("tablet") {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .list {
+      @include mixins.displayFlex(flex-start, flex-start);
+      flex-direction: column;
+      background-color: colors.$primary-button-background; 
+      max-height: 0;
+      transition: max-height .35s ease-out;
+      overflow: hidden;
+
+      &.active {
+        max-height: 1000px;
+        transition: max-height .35s ease-in;
+      }
+    }
+
+    &:has(> .list.active) .box .chevron_icon {
+      rotate: (-180deg);
+    }
+  }
+}

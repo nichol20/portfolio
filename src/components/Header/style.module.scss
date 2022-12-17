@@ -1,0 +1,94 @@
+@use '../../styles/colors'; 
+@use '../../styles/mixins'; 
+@use '../../styles/medias' as *;
+
+.header {
+  width: 100%;
+  @include mixins.displayFlex(flex-start);
+  background-color: colors.$main-background;
+  padding: 10px 30px 5px 30px;
+  color: colors.$primary-text;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  @include media("desktop") {
+    padding: 10px 10px 5px 10px;
+  }
+
+  h2 {
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .nav_bar {
+    .toggle_menu {
+      position: fixed;
+      right: 14px;
+      top: 7px;
+      width: 35px;
+      height: 35px;
+      border: none;
+      background: url(../../assets//menu.svg);
+      background-repeat: no-repeat;
+      background-position: center; 
+      @include mixins.whiteFilter();
+      z-index: 1000;
+      display: none;
+
+      &.active {
+        background: url(../../assets/close.svg)
+      }
+
+      &.active ~ .nav_list {
+        display: flex;
+      }
+
+      @include media("tablet") {
+        display: block;
+      }
+    }
+
+    .nav_list {
+      @include mixins.displayFlex();
+      gap: 15px;
+      list-style: none;
+      font-weight: 500;
+
+      @include media("tablet") {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        background-color: colors.$main-background;
+        font-size: 1.5em;
+      }
+
+      .nav_item {
+        white-space: nowrap;
+
+        .link {
+          cursor: pointer;
+          border-bottom: 1px solid transparent;
+          transition: .3s;
+          text-decoration: none;
+          color: colors.$primary-text;
+  
+          &:hover {
+            color: #fff;
+          }
+  
+          &.active {
+            color: #fff;
+            border-color:#fff;
+          }
+        }
+      }
+    }
+  }
+}
