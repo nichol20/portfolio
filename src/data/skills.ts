@@ -1,4 +1,4 @@
-import { csharpIcon, cssIcon, cypressIcon, dockerIcon, expressjsIcon, gitIcon, htmlIcon, javaIcon, javascriptIcon, jestIcon, jwtIcon, linuxIcon, mongodbIcon, nextjsIcon, nodejsIcon, postgresqlIcon, pythonIcon, rabbitmqIcon, reactIcon, redisIcon, reduxIcon, sassIcon, socketioIcon, testingLibraryIcon, typescriptIcon } from "../assets";
+import { csharpIcon, cssIcon, cypressIcon, dockerIcon, expressjsIcon, gitIcon, htmlIcon, javaIcon, javascriptIcon, jestIcon, jwtIcon, linuxIcon, mongodbIcon, nextjsIcon, nodejsIcon, postgresqlIcon, pythonIcon, rabbitmqIcon, reactIcon, redisIcon, reduxIcon, sassIcon, socketioIcon, testingLibraryIcon, typescriptIcon } from "../assets/images";
 import { SkillCategoryObject } from "../types/data";
 
 export const frontend: SkillCategoryObject = {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { SkillListItem } from '../SkillListItem'
 
-import { codeSlashIcon, serverIcon, chevronDownIcon, chipIcon } from '../../assets'
+import { codeSlashIcon, serverIcon, chevronDownIcon, chipIcon } from '../../assets/images'
 
 import styles from './style.module.scss'
 import { backend, frontend, general } from '../../data/skills'

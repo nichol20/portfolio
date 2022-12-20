@@ -1,6 +1,7 @@
 import React from 'react'
-import { githubIcon, linkedinIcon } from '../../assets'
 
+import { githubIcon, linkedinIcon } from '../../assets/images'
+import curriculumPdf from '../../assets/pdf/Nicholas-curriculo.pdf'
 import styles from './style.module.scss'
 
 export const AboutSection = () => {
@@ -41,7 +42,7 @@ export const AboutSection = () => {
             </li>
           </ul>
         </div>
-        <button className={styles.download_cv_button}>Download CV</button>
+        <a href={curriculumPdf} download className={styles.download_cv_link}>Download CV</a>
       </div>
     </section>
   )

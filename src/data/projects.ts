@@ -1,4 +1,4 @@
-import { noteAppPhoto, pokemonGamePhoto, recipeSitePhoto, socialMediaPhoto } from "../assets";
+import { noteAppPhoto, pokemonGamePhoto, recipeSitePhoto, socialMediaPhoto } from "../assets/images";
 import { ProjectInfo } from "../types/data";
 
 export const mainProjects: ProjectInfo[] = [

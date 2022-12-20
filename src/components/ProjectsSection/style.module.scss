@@ -2,6 +2,8 @@
 @use '../../styles/mixins'; 
 @use '../../styles/medias' as *;
 
+$chevron-image: '../../assets/images/chevron-forward.svg';
+
 .projects_section {
   @include mixins.sectionStyle();
 }
@@ -111,7 +113,7 @@
       div {
         width: 20px;
         height: 20px;
-        background-image: url(../../assets/chevron-forward.svg);
+        background-image: url($chevron-image);
         background-repeat: no-repeat;
         background-position: center;
         @include mixins.whiteFilter();

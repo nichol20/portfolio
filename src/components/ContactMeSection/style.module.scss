@@ -101,6 +101,11 @@
         }
       }
 
+      .missing_information_message {
+        color: red;
+        font-size: .875em;
+      }
+
       .submit_button {
         padding: 8px 12px;
         background-color: colors.$secondary-button-background;
@@ -118,4 +123,12 @@
       }
     }
   }
+}
+
+.success_popup {
+  @include mixins.popUp('success');
+}
+
+.error_popup {
+  @include mixins.popUp('error');
 }

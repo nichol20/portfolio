@@ -1,23 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 
-import { mailIcon, phoneIcon, locationIcon } from '../../assets'
+import { mailIcon, phoneIcon, locationIcon } from '../../assets/images'
 import styles from './style.module.scss'
 
 export const ContactMeSection = () => {
+  const [ missingInformationError, setMissingInformationError ] = useState(false)
+  const [ isSendingEmail, setIsSendingEmail ] = useState(false)
 
   const sendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    
-    const formData =  new FormData(event.currentTarget)
-    const inputFields: NodeListOf<HTMLInputElement | HTMLTextAreaElement> = document.querySelectorAll(`.${styles.field_input}`)
-    
-    console.log({
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message')
-    })
+    setIsSendingEmail(true)
 
-    inputFields.forEach(inputEl => inputEl.value = '')
+    const formData = new FormData(event.currentTarget)
+    const inputFields: NodeListOf<HTMLInputElement | HTMLTextAreaElement> = document.querySelectorAll(`.${styles.field_input}`)
+
+    for(const pair of formData.entries()) {
+      if(pair[1].length === 0) {
+        setMissingInformationError(true)
+        setIsSendingEmail(false)
+        return
+      }
+    }
+
+    try {
+      await axios.post('http://localhost:5000/email', {
+        email: formData.get('email'),
+        name: formData.get('name'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      })
+  
+      popUpSuccessMessage()
+      setMissingInformationError(false)
+      inputFields.forEach(inputEl => inputEl.value = '')
+    } catch (error) {
+      popUpErrorMessage()
+    }
+    
+    setIsSendingEmail(false)
+  }
+
+  const MissingInformationSpan = () => {
+    if(missingInformationError)
+     return <span className={styles.missing_information_message}>Por favor preencha todos os campos</span>
+    else return null
+  }
+
+  const popUpSuccessMessage = () => {
+    const successPopUpEl = (document.querySelector(`.${styles.success_popup}`) as HTMLDivElement)
+
+    successPopUpEl.classList.add(styles.active)
+
+    setTimeout(() => {
+      successPopUpEl.classList.remove(styles.active)
+    }, 3000)
+  }
+
+  const popUpErrorMessage = () => {
+    const errorPopUpEl = (document.querySelector(`.${styles.error_popup}`) as HTMLDivElement)
+
+    errorPopUpEl.classList.add(styles.active)
+
+    setTimeout(() => {
+      errorPopUpEl.classList.remove(styles.active)
+    }, 3000)
   }
 
   return (
@@ -58,6 +105,10 @@ export const ContactMeSection = () => {
             <input type="text" name='email' className={styles.field_input} />
           </div>
           <div className={styles.field}>
+            <h4 className={styles.field_name}>Name</h4>
+            <input type="text" name='name' className={styles.field_input} />
+          </div>
+          <div className={styles.field}>
             <h4 className={styles.field_name}>Subject</h4>
             <input type="text" name='subject' className={styles.field_input} />
           </div>
@@ -65,8 +116,21 @@ export const ContactMeSection = () => {
             <h4 className={styles.field_name}>Message</h4>
             <textarea name='message' className={styles.field_input} spellCheck={false} />
           </div>
-          <button type='submit' className={styles.submit_button}>Submit</button>
+          <MissingInformationSpan />
+          <button
+           type='submit' 
+           className={styles.submit_button}
+           disabled={isSendingEmail}
+          >
+            { isSendingEmail ? 'Loading...' : 'Submit' }
+          </button>
         </form>
+      </div>
+      <div className={styles.success_popup}>
+        Email enviado com sucesso
+      </div>
+      <div className={styles.error_popup}>
+        Algo deu errado
       </div>
     </section>
   )

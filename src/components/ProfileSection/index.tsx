@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { profilePhoto, sendIcon, mouseIcon, arrowDownIcon } from '../../assets'
+import { profilePhoto, sendIcon, mouseIcon, arrowDownIcon } from '../../assets/images'
 import styles from './style.module.scss'
 
 export const ProfileSection = () => {

@@ -1,6 +1,6 @@
 import { Repository } from '../../types/data'
 
-import { cssIcon, htmlIcon, javaIcon, javascriptIcon, typescriptIcon } from '../../assets' 
+import { cssIcon, htmlIcon, javaIcon, javascriptIcon, typescriptIcon } from '../../assets/images' 
 import styles from './style.module.scss'
 
 interface LatestProjectsProps {

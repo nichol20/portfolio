@@ -77,29 +77,29 @@
   }
 
   .photo {
-    width: 400px;
-    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
     border-radius: 100%;
     overflow: hidden;
     @include mixins.displayFlex();
 
     @include media("desktop") {
-      width: 350px;
-      height: 350px;
+      max-width: 350px;
+      max-height: 350px;
     }
 
     @include media("tablet") {
-      width: 250px;
-      height: 250px;
+      max-width: 250px;
+      max-height: 250px;
     }
 
-    @include media("tablet") {
-      width: 175px;
-      height: 175px;
+    @include media("phone") {
+      max-width: 175px;
+      max-height: 175px;
     }
 
     img {
-      height: 100%;
+      width: 100%;
     }
   }
 }
