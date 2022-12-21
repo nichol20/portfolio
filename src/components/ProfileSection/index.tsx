@@ -5,16 +5,16 @@ import styles from './style.module.scss'
 
 export const ProfileSection = () => {
   return (
-    <section className={styles.profile} id="Home">
+    <section className={styles.profile} id="profile">
       <div className={styles.main_content}>
         <div className={styles.description}>
-          <h3 className={styles.greetings}>Hi, I am Nicholas</h3>
+          <h3 className={styles.greetings}>Olá, Eu sou o Nicholas</h3>
           <span className={styles.text}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quis, perferendis explicabo expedita corporis recusandae reprehenderit modi quisquam vero minima, fuga dignissimos. Facilis earum ex voluptates, sequi quae nihil culpa!
+            Obcecado por conhecimentos, amante da tecnologia e ansioso para progredir minhas capacidades. Rejeito a possibilidade de passar um dia sem continuar evoluindo. Ser esforçado, aprendizado rápido e inteligência emocional são meus pontos fortes.
           </span>
 
           <a href='#Contact' className={styles.contact_link}>
-            <span>Contact me</span>
+            <span>Me contate</span>
             <img src={sendIcon} alt='send' />
           </a>
         </div>
@@ -25,7 +25,7 @@ export const ProfileSection = () => {
 
       <div className={styles.scrolldown_box}>
           <img src={mouseIcon} alt="mouse" className={styles.mouse_icon}/>
-          <span>Scroll down</span>
+          <span>Role para baixo</span>
           <img src={arrowDownIcon} alt="arrow down" className={styles.arrowdown_icon}/>
         </div>
     </section>

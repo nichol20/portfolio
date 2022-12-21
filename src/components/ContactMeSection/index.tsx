@@ -68,10 +68,10 @@ export const ContactMeSection = () => {
   }
 
   return (
-    <section className={styles.contactme_section} id="Contact">
+    <section className={styles.contactme_section} id="contact">
       <div className={styles.header}>
-        <h2 className={styles.section_title}>Contact Me</h2>
-        <h3 className={styles.section_subtitle}>get in touch</h3>
+        <h2 className={styles.section_title}>Me Contate</h2>
+        <h3 className={styles.section_subtitle}>entre em contato</h3>
       </div>
 
       <div className={styles.content}>
@@ -79,7 +79,7 @@ export const ContactMeSection = () => {
           <div className={styles.contact_info}>
             <img src={phoneIcon} alt="phone" className={styles.icon} />
             <div className={styles.title_box}>
-              <h3>Phone</h3>
+              <h3>Telefone</h3>
               <span>+ 55 &#40;88&#41; 99933-1832</span>
             </div>
           </div>
@@ -93,7 +93,7 @@ export const ContactMeSection = () => {
           <div className={styles.contact_info}>
             <img src={locationIcon} alt="phone" className={styles.icon} />
             <div className={styles.title_box}>
-              <h3>Location</h3>
+              <h3>Localização</h3>
               <span>são paulo, sp</span>
             </div>
           </div>
@@ -105,15 +105,15 @@ export const ContactMeSection = () => {
             <input type="text" name='email' className={styles.field_input} />
           </div>
           <div className={styles.field}>
-            <h4 className={styles.field_name}>Name</h4>
+            <h4 className={styles.field_name}>Nome</h4>
             <input type="text" name='name' className={styles.field_input} />
           </div>
           <div className={styles.field}>
-            <h4 className={styles.field_name}>Subject</h4>
+            <h4 className={styles.field_name}>Assunto</h4>
             <input type="text" name='subject' className={styles.field_input} />
           </div>
           <div className={`${styles.field} ${styles.message_field}`}>
-            <h4 className={styles.field_name}>Message</h4>
+            <h4 className={styles.field_name}>Mensagem</h4>
             <textarea name='message' className={styles.field_input} spellCheck={false} />
           </div>
           <MissingInformationSpan />
@@ -122,7 +122,7 @@ export const ContactMeSection = () => {
            className={styles.submit_button}
            disabled={isSendingEmail}
           >
-            { isSendingEmail ? 'Loading...' : 'Submit' }
+            { isSendingEmail ? 'Carregando...' : 'Enviar' }
           </button>
         </form>
       </div>

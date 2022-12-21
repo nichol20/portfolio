@@ -2,13 +2,17 @@ import React, { useEffect } from 'react'
 
 import styles from './style.module.scss'
 
-const sections = [
-  "Home",
-  "About",
-  "Skills",
-  "Projects",
-  "Contact"
-]
+interface Sections {
+  [id: string]: string
+}
+
+const sections: Sections = {
+  profile: "Perfil",
+  about: "Sobre",
+  skills: "Habilidades",
+  projects: "Projetos",
+  contact: "Contato"
+}
 
 export const Header = () => {
 
@@ -54,14 +58,14 @@ export const Header = () => {
         <button className={styles.toggle_menu} onClick={toggleMenu}></button>
         <ul className={styles.nav_list}>
           {
-            sections.map((section, index) => {
+            Object.keys(sections).map((sectionId, index) => {
               return (
                 <li className={styles.nav_item} key={index}>
                   <a
-                   href={`#${section}`} 
+                   href={`#${sectionId}`} 
                    className={`${styles.link}`}
                    onClick={closeMenu}
-                  >{section}</a>
+                  >{sections[sectionId]}</a>
                 </li>
               )
             })

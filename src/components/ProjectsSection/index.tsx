@@ -43,15 +43,15 @@ export const ProjectsSection = () => {
   }, [])
 
   return (
-    <section className={styles.projects_section} id="Projects">
+    <section className={styles.projects_section} id="projects">
       <div className={styles.header}>
-        <h2 className={styles.section_title}>Projects</h2>
-        <h3 className={styles.section_subtitle}>some projects</h3>
+        <h2 className={styles.section_title}>Projetos</h2>
+        <h3 className={styles.section_subtitle}>alguns projetos</h3>
       </div>
       <div className={styles.content}>  
         <nav className={styles.tabs}>
-          <span className={styles.active} id="mainTab" onClick={handleTab}>Main</span>
-          <span id="latestTab" onClick={handleTab}>Latest</span>
+          <span className={styles.active} id="mainTab" onClick={handleTab}>Principais</span>
+          <span id="latestTab" onClick={handleTab}>Recentes</span>
         </nav>
         <Tabs />   
       </div>

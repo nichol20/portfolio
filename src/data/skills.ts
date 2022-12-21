@@ -1,4 +1,4 @@
-import { csharpIcon, cssIcon, cypressIcon, dockerIcon, expressjsIcon, gitIcon, htmlIcon, javaIcon, javascriptIcon, jestIcon, jwtIcon, linuxIcon, mongodbIcon, nextjsIcon, nodejsIcon, postgresqlIcon, pythonIcon, rabbitmqIcon, reactIcon, redisIcon, reduxIcon, sassIcon, socketioIcon, testingLibraryIcon, typescriptIcon } from "../assets/images";
+import { abcIcon, csharpIcon, cssIcon, cypressIcon, dockerIcon, expressjsIcon, gitIcon, htmlIcon, javaIcon, javascriptIcon, jestIcon, jwtIcon, linuxIcon, mongodbIcon, nextjsIcon, nodejsIcon, postgresqlIcon, pythonIcon, rabbitmqIcon, reactIcon, redisIcon, reduxIcon, sassIcon, socketioIcon, testingLibraryIcon, typescriptIcon } from "../assets/images";
 import { SkillCategoryObject } from "../types/data";
 
 export const frontend: SkillCategoryObject = {
@@ -30,17 +30,17 @@ export const frontend: SkillCategoryObject = {
   testingLibrary: {
     icon: testingLibraryIcon,
     name: 'Testing library',
-    percentage: 60
+    percentage: 50
   },
   sass: {
     icon: sassIcon,
     name: 'SASS',
-    percentage: 40
+    percentage: 45
   },
   redux: {
     icon: reduxIcon,
     name: 'Redux',
-    percentage: 40
+    percentage: 35
   }
 }
 
@@ -50,10 +50,15 @@ export const backend: SkillCategoryObject = {
     name: 'NodeJS',
     percentage: 80
   },
+  mongo: {
+    icon: mongodbIcon,
+    name: 'MongoDB',
+    percentage: 80
+  },
   expressjs: {
     icon: expressjsIcon,
     name: 'ExpressJS',
-    percentage: 70
+    percentage: 65
   },
   docker: {
     icon: dockerIcon,
@@ -63,27 +68,27 @@ export const backend: SkillCategoryObject = {
   rabbitmq: {
     icon: rabbitmqIcon,
     name: 'RabbitMQ',
-    percentage: 50
+    percentage: 40
   },
   redis: {
     icon: redisIcon,
     name: 'Redis',
-    percentage: 50
-  },
-  mongo: {
-    icon: mongodbIcon,
-    name: 'MongoDB',
-    percentage: 80
+    percentage: 40
   },
   postgres: {
     icon: postgresqlIcon,
     name: 'PostgreSQL',
-    percentage: 50
+    percentage: 40
   },
   
 }
 
 export const general: SkillCategoryObject = {
+  abc: {
+    icon: abcIcon,
+    name: 'English',
+    percentage: 85
+  },
   typescript: {
     icon: typescriptIcon,
     name: 'Typescript',
@@ -97,37 +102,37 @@ export const general: SkillCategoryObject = {
   socketio: {
     icon: socketioIcon,
     name: 'Socket.io',
-    percentage: 60
+    percentage: 45
   },
   jwt: {
     icon: jwtIcon,
     name: 'Json web token',
-    percentage: 50
+    percentage: 45
   },
   linuxCommands: {
     icon: linuxIcon,
     name: 'Linux commands',
-    percentage: 50
+    percentage: 45
   },
   jest: {
     icon: jestIcon,
     name: 'Jest',
-    percentage: 50
+    percentage: 40
   },
   cypress: {
     icon: cypressIcon,
     name: 'Cypress',
-    percentage: 50
+    percentage: 40
   },
   csharp: {
     icon: csharpIcon,
     name: 'C#',
-    percentage: 35
+    percentage: 30
   },
   java: {
     icon: javaIcon,
     name: 'Java',
-    percentage: 25
+    percentage: 20
   },
   python: {
     icon: pythonIcon,

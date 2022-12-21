@@ -1,23 +1,24 @@
-import React from 'react'
-
 import { githubIcon, linkedinIcon } from '../../assets/images'
 import curriculumPdf from '../../assets/pdf/Nicholas-curriculo.pdf'
 import styles from './style.module.scss'
 
 export const AboutSection = () => {
   return (
-    <section className={styles.about_section} id="About">
+    <section className={styles.about_section} id="about">
       <div className={styles.header}>
-        <h2 className={styles.section_title}>About</h2>
+        <h2 className={styles.section_title}>Sobre</h2>
         <h3 className={styles.section_subtitle}>um pouco sobre mim</h3>
       </div>
       <div className={styles.content}>
         <div className={styles.text_box}>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ex reiciendis natus similique? Molestias, ipsa voluptatem repellendus quia expedita quasi soluta culpa tempore incidunt, dignissimos sed ea saepe optio quas!
+            Eu sempre fui muito fã de jogos, então meu primeiro contato com a área de tecnologia foi através da criação de games, quando tentei criar os meus próprios utilizando Java e mais futuramente Unity &#40;plataforma de desenvolvimento&#41;.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique odio vitae facilis officiis minus. Accusantium corporis incidunt autem. Sapiente eos illum totam beatae sequi mollitia voluptate aliquid neque? Fugit, odio.
+            Porém, estava curioso sobre outros assuntos e resolvi experimentar Web Development. A partir daí me apaxonei por estruturas e tecnologias complexas e decidi me aprofundar mais no assunto. 
+          </p>
+          <p>
+            Acredito no autodidatismo, e faz cerca de 1 ano desde que iniciei meus estudos em Desenvolvimento Web &#40;tanto Frontend quanto Backend&#41;. Hoje em dia busco minha primeira experiência profissional.
           </p>
         </div>
         <div className={styles.social_medias}>
