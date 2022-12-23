@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { mainProjects } from '../../data/projects'
 import { SlideList } from './SlideList'
@@ -6,6 +6,18 @@ import { SlideList } from './SlideList'
 import styles from './style.module.scss'
 
 export const MainProjects = () => {
+  const [ timeoutId, setTimeoutId ] = useState<NodeJS.Timeout>()
+
+  const startTimeout = () => {
+    if(typeof timeoutId === 'number') clearTimeout(timeoutId)
+
+    const tId = setTimeout(() => {
+      changeCurrentBanner(0)
+      setTimeoutId(undefined)
+    }, 20000)
+
+    setTimeoutId(tId)
+  }
 
   const slideRight = () => {
     const slideListEl = (document.querySelector(`.${styles.slide_list}`) as HTMLUListElement)
@@ -16,6 +28,8 @@ export const MainProjects = () => {
 
     // returns if the previous animation is not completely finished
     if(carouselIndex % 1 !== 0) return
+
+    startTimeout()
 
     if(nextOffsetLeft < slideListMaxOffsetLeft) {
       changeCarouselFocus(0)
@@ -37,6 +51,8 @@ export const MainProjects = () => {
     // returns if the previous animation is not completely finished
     if(carouselIndex % 1 !== 0) return
 
+    startTimeout()
+
     if(nextOffsetLeft > 0) {
       changeCarouselFocus(lastCarouselIndex)
       return slideListEl.style.left = `${slideListMaxOffsetLeft}px`
@@ -55,7 +71,7 @@ export const MainProjects = () => {
     ;(carouselEl.childNodes[index] as HTMLDivElement).classList.add(styles.focus)
   }
   
-  const handleCarouselClick = (index: number) => {
+  const changeCurrentBanner = (index: number) => {
     const slideListEl = (document.querySelector(`.${styles.slide_list}`) as HTMLUListElement)
     const bannersEl = (document.querySelector(`.${styles.banners}`) as HTMLDivElement)
     const newOffsetLeft = bannersEl.clientWidth * index * -1
@@ -78,8 +94,9 @@ export const MainProjects = () => {
       <div className={styles.carousel}>
         {
           mainProjects.map((_, index) => {
-            if(index === 0) return <div className={styles.focus} key={index} onClick={() => handleCarouselClick(index)}/>
-            return <div key={index} onClick={() => handleCarouselClick(index)}/>
+            if(index === 0) return <div className={styles.focus} key={index} onClick={() => changeCurrentBanner(index)}/>
+
+            return <div key={index} onClick={() => changeCurrentBanner(index)}/>
           })
         }
       </div>

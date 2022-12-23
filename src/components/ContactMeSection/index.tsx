@@ -24,7 +24,7 @@ export const ContactMeSection = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/email', {
+      await axios.post('https://nicholas-portfolio-server.onrender.com', {
         email: formData.get('email'),
         name: formData.get('name'),
         subject: formData.get('subject'),

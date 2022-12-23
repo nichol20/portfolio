@@ -13,7 +13,7 @@ export const ProfileSection = () => {
             Obcecado por conhecimentos, amante da tecnologia e ansioso para progredir minhas capacidades. Rejeito a possibilidade de passar um dia sem continuar evoluindo. Ser esforçado, aprendizado rápido e inteligência emocional são meus pontos fortes.
           </span>
 
-          <a href='#Contact' className={styles.contact_link}>
+          <a href='#contact' className={styles.contact_link}>
             <span>Me contate</span>
             <img src={sendIcon} alt='send' />
           </a>
