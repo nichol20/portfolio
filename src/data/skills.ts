@@ -1,4 +1,4 @@
-import { abcIcon, csharpIcon, cssIcon, cypressIcon, dockerIcon, expressjsIcon, gitIcon, htmlIcon, javaIcon, javascriptIcon, jestIcon, jwtIcon, linuxIcon, mongodbIcon, nextjsIcon, nodejsIcon, postgresqlIcon, pythonIcon, rabbitmqIcon, reactIcon, redisIcon, reduxIcon, sassIcon, socketioIcon, testingLibraryIcon, typescriptIcon } from "../assets/images";
+import { abcIcon, csharpIcon, cssIcon, cypressIcon, dockerIcon, expressjsIcon, gitIcon, htmlIcon, javaIcon, javascriptIcon, jestIcon, jwtIcon, linuxIcon, mongodbIcon, nextjsIcon, nginxIcon, nodejsIcon, postgresqlIcon, pythonIcon, rabbitmqIcon, reactIcon, redisIcon, reduxIcon, sassIcon, socketioIcon, testingLibraryIcon, typescriptIcon } from "../assets/images";
 import { SkillCategoryObject } from "../types/data";
 
 export const frontend: SkillCategoryObject = {
@@ -80,14 +80,18 @@ export const backend: SkillCategoryObject = {
     name: 'PostgreSQL',
     percentage: 40
   },
-  
+  nginx: {
+    icon: nginxIcon,
+    name: 'Nginx',
+    percentage: 20
+  }
 }
 
 export const general: SkillCategoryObject = {
   abc: {
     icon: abcIcon,
     name: 'English',
-    percentage: 85
+    percentage: 80
   },
   typescript: {
     icon: typescriptIcon,

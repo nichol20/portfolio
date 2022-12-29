@@ -40,6 +40,7 @@ export { default as mongodbIcon } from './logos/mongodb.svg'
 export { default as postgresqlIcon} from './logos/postgresql.svg'
 export { default as rabbitmqIcon } from './logos/rabbitmq.svg'
 export { default as redisIcon } from './logos/redis.svg'
+export { default as nginxIcon } from './logos/nginx.svg'
 
 //general
 export { default as gitIcon } from './logos/git.svg'
