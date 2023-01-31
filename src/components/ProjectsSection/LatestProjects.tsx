@@ -21,6 +21,8 @@ const icons: Icons = {
 
 export const LatestProjects = ({ repos }: LatestProjectsProps) => {
 
+  console.log(repos)
+
   return (
     <div className={styles.latest_pojects}>
       <ul className={styles.list}>
@@ -29,10 +31,14 @@ export const LatestProjects = ({ repos }: LatestProjectsProps) => {
             return (
               <li className={styles.item} key={index}>
                 <a href={repo.html_url} className={styles.link} target='_blank'>{repo.name}</a>
-                <div className={styles.language_box}>
-                  <img src={icons[repo.language]} alt={repo.name} />
-                  <span className={styles.language_name} >{repo.language}</span>
-                </div>
+                {
+                  repo.language && (
+                    <div className={styles.language_box}>
+                      <img src={icons[repo.language]} alt={repo.name} />
+                      <span className={styles.language_name} >{repo.language}</span>
+                    </div>
+                  )
+                }
               </li>
             )
           })

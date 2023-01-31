@@ -309,6 +309,9 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
       flex-direction: column;
       border: solid 1px colors.$secondary-text;
       border-radius: 6px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
 
       @include media("phone") {
         align-items: center;

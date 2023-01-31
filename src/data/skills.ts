@@ -5,17 +5,17 @@ export const frontend: SkillCategoryObject = {
   html: {
     icon: htmlIcon,
     name: 'HTML',
-    percentage: 85
+    percentage: 90
   },
   css: {
     icon: cssIcon,
     name: 'CSS',
-    percentage: 85
+    percentage: 90
   },
   javascript: {
     icon: javascriptIcon,
     name: 'Javascript',
-    percentage: 85
+    percentage: 90
   },
   react: {
     icon: reactIcon,
@@ -31,6 +31,11 @@ export const frontend: SkillCategoryObject = {
     icon: testingLibraryIcon,
     name: 'Testing library',
     percentage: 50
+  },
+  cypress: {
+    icon: cypressIcon,
+    name: 'Cypress',
+    percentage: 40
   },
   sass: {
     icon: sassIcon,
@@ -121,11 +126,6 @@ export const general: SkillCategoryObject = {
   jest: {
     icon: jestIcon,
     name: 'Jest',
-    percentage: 40
-  },
-  cypress: {
-    icon: cypressIcon,
-    name: 'Cypress',
     percentage: 40
   },
   csharp: {
