@@ -20,9 +20,6 @@ const icons: Icons = {
 }
 
 export const LatestProjects = ({ repos }: LatestProjectsProps) => {
-
-  console.log(repos)
-
   return (
     <div className={styles.latest_pojects}>
       <ul className={styles.list}>
