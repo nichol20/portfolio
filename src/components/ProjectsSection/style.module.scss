@@ -62,7 +62,7 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
 
     .chevron_box {
       position: absolute;
-      background-color: colors.$dark-transparent-background;
+      background-color: colors.$dark-transparent-bg;
       padding: 14px 4px;
       z-index: 100;
       cursor: pointer;
@@ -76,7 +76,7 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
 
 
       &:hover {
-        background-color: colors.$dark-transparent-background-hover;
+        background-color: colors.$dark-transparent-bg-hover;
       }
 
       &.forward {
@@ -130,16 +130,16 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
       width: 10px;
       height: 10px;
       border-radius: 100%;
-      background-color: colors.$light-tranparent-background;
+      background-color: colors.$light-tranparent-bg;
       cursor: pointer;
       transition: .3s;
 
       &:hover {
-        background-color: colors.$light-tranparent-background-hover;
+        background-color: colors.$light-tranparent-bg-hover;
       }
 
       &.focus {
-        background-color: colors.$light-tranparent-background-hover;
+        background-color: colors.$light-tranparent-bg-hover;
       }
     }
   }
@@ -238,7 +238,7 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
 
       .description {
         color: colors.$secondary-text;
-        font-size: 1.2em;
+        font-size: 1em;
 
         @include media("desktop") {
           font-size: .875em;

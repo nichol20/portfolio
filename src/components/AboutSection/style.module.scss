@@ -49,7 +49,7 @@
 
   .download_cv_link {
     padding: 12px 16px;
-    background-color: colors.$secondary-button-background;
+    background-color: colors.$secondary-btn-bg;
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -59,7 +59,7 @@
     text-decoration: none;
 
     &:hover {
-      background-color: colors.$secondary-button-background-hover;
+      background-color: colors.$secondary-btn-bg-hover;
     }
   }
 }

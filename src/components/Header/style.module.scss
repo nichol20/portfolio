@@ -8,7 +8,7 @@ $close-icon: '../../assets/images/close.svg';
 .header {
   width: 100%;
   @include mixins.displayFlex(flex-start);
-  background-color: colors.$main-background;
+  background-color: colors.$primary-bg;
   padding: 10px 30px 5px 30px;
   color: colors.$primary-text;
   position: fixed;
@@ -68,7 +68,7 @@ $close-icon: '../../assets/images/close.svg';
         width: 100%;
         height: 100vh;
         flex-direction: column;
-        background-color: colors.$main-background;
+        background-color: colors.$primary-bg;
         font-size: 1.5em;
       }
 

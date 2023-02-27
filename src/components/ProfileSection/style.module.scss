@@ -53,7 +53,7 @@
       @include mixins.displayFlex();
       margin-top: 20px;
       padding: 10px 14px;
-      background: colors.$primary-button-background;
+      background: colors.$primary-btn-bg;
       color: colors.$primary-text;
       font-size: 1.2em;
       border-radius: 4px;
@@ -65,7 +65,7 @@
       text-decoration: none;
 
       &:hover {
-        background: colors.$primary-button-background-hover;
+        background: colors.$primary-btn-bg-hover;
       }
 
       img {

@@ -29,7 +29,7 @@ export const LatestProjects = ({ repos }: LatestProjectsProps) => {
               <li className={styles.item} key={index}>
                 <a href={repo.html_url} className={styles.link} target='_blank'>{repo.name}</a>
                 {
-                  repo.language && (
+                  (repo.language || icons[repo.language]) && (
                     <div className={styles.language_box}>
                       <img src={icons[repo.language]} alt={repo.name} />
                       <span className={styles.language_name} >{repo.language}</span>

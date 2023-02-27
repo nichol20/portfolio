@@ -12,7 +12,7 @@
 
     .information_box {
       @include mixins.displayFlex(center, flex-start);
-      background-color: colors.$primary-button-background;
+      background-color: colors.$primary-btn-bg;
       border-radius: 10px;
       max-width: 800px;
       padding: 30px;
@@ -74,7 +74,7 @@
 
       .field {
         width: 100%;
-        background-color: colors.$field-background;
+        background-color: colors.$field-bg;
         padding: 10px 20px;
         border-radius: 8px;
 
@@ -108,7 +108,7 @@
 
       .submit_button {
         padding: 8px 12px;
-        background-color: colors.$secondary-button-background;
+        background-color: colors.$secondary-btn-bg;
         border: none;
         border-radius: 4px;
         cursor: pointer;
@@ -118,7 +118,7 @@
         font-weight: 600;
 
         &:hover {
-          background-color: colors.$secondary-button-background-hover;
+          background-color: colors.$secondary-btn-bg-hover;
         }
       }
     }
