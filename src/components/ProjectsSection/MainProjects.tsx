@@ -1,65 +1,24 @@
 import React, { useState } from 'react'
 
 import { mainProjects } from '../../data/projects'
-import { SlideList } from './SlideList'
 
 import styles from './style.module.scss'
 
 export const MainProjects = () => {
-  const [ timeoutId, setTimeoutId ] = useState<NodeJS.Timeout>()
+  const [ currentBanner, setCurrentBanner ] = useState(0)
 
-  const startTimeout = () => {
-    if(typeof timeoutId === 'number') clearTimeout(timeoutId)
+  const nextBanner = () => {
+    const slides = (document.querySelectorAll(`.${styles.banner}`) as NodeListOf<HTMLLIElement>)
+    const newCurrentBanner = (currentBanner + 1) % slides.length
 
-    const tId = setTimeout(() => {
-      changeCurrentBanner(0)
-      setTimeoutId(undefined)
-    }, 20000)
-
-    setTimeoutId(tId)
+    changeCurrentBanner(newCurrentBanner)
   }
 
-  const slideRight = () => {
-    const slideListEl = (document.querySelector(`.${styles.slide_list}`) as HTMLUListElement)
-    const bannersEl = (document.querySelector(`.${styles.banners}`) as HTMLDivElement)
-    const slideListMaxOffsetLeft = (bannersEl.clientWidth * (slideListEl.childElementCount - 1) * -1)
-    const nextOffsetLeft = slideListEl.offsetLeft - bannersEl.clientWidth
-    const carouselIndex = Math.abs(nextOffsetLeft / bannersEl.clientWidth)
+  const previousBanner = () => {
+    const slides = (document.querySelectorAll(`.${styles.banner}`) as NodeListOf<HTMLLIElement>)
+    const newCurrentBanner = (currentBanner - 1) < 0 ? (slides.length - 1) : (currentBanner - 1)
 
-    // returns if the previous animation is not completely finished
-    if(carouselIndex % 1 !== 0) return
-
-    startTimeout()
-
-    if(nextOffsetLeft < slideListMaxOffsetLeft) {
-      changeCarouselFocus(0)
-      return slideListEl.style.left = `0px`
-    }
-
-    changeCarouselFocus(carouselIndex)
-    slideListEl.style.left = `${nextOffsetLeft}px`
-  }
-  
-  const slideLeft = () => {
-    const slideListEl = (document.querySelector(`.${styles.slide_list}`) as HTMLUListElement)
-    const bannersEl = (document.querySelector(`.${styles.banners}`) as HTMLDivElement)
-    const slideListMaxOffsetLeft = (bannersEl.clientWidth * (slideListEl.childElementCount - 1) * -1)
-    const nextOffsetLeft = slideListEl.offsetLeft + bannersEl.clientWidth
-    const carouselIndex = Math.abs(nextOffsetLeft / bannersEl.clientWidth)
-    const lastCarouselIndex = slideListEl.childElementCount - 1
-
-    // returns if the previous animation is not completely finished
-    if(carouselIndex % 1 !== 0) return
-
-    startTimeout()
-
-    if(nextOffsetLeft > 0) {
-      changeCarouselFocus(lastCarouselIndex)
-      return slideListEl.style.left = `${slideListMaxOffsetLeft}px`
-    }
-
-    changeCarouselFocus(carouselIndex)
-    slideListEl.style.left = `${nextOffsetLeft}px`
+    changeCurrentBanner(newCurrentBanner)
   }
 
   const changeCarouselFocus = (index: number) => {
@@ -70,35 +29,56 @@ export const MainProjects = () => {
 
     ;(carouselEl.childNodes[index] as HTMLDivElement).classList.add(styles.focus)
   }
-  
-  const changeCurrentBanner = (index: number) => {
-    const slideListEl = (document.querySelector(`.${styles.slide_list}`) as HTMLUListElement)
-    const bannersEl = (document.querySelector(`.${styles.banners}`) as HTMLDivElement)
-    const newOffsetLeft = bannersEl.clientWidth * index * -1
 
-    slideListEl.style.left = `${newOffsetLeft}px`
-    changeCarouselFocus(index)
+  const changeCurrentBanner = (newIndex: number) => {
+    const slides = (document.querySelectorAll(`.${styles.banner}`) as NodeListOf<HTMLLIElement>)
+    slides[currentBanner].style.opacity = '0'
+    slides[currentBanner].style.pointerEvents = 'none'
+
+    setCurrentBanner(() => {
+      slides[newIndex].style.opacity = '1'
+      slides[newIndex].style.pointerEvents = 'all'
+      changeCarouselFocus(newIndex)
+      return newIndex
+    })
   }
   
   return (
     <div className={styles.main_projects}>
-      <div className={styles.banners}>
-        <div className={`${styles.chevron_box} ${styles.forward}`} onClick={slideRight}>
+      <div className={styles.banners_container}>
+        {mainProjects.map((project, index) => {
+          return (
+            <div className={styles.banner} key={index}>
+              <div className={styles.photo_box}>
+                <img src={project.image} alt={project.title} className={styles.photo} />
+              </div>
+      
+              <div className={styles.info}>
+                <h3 className={styles.title}>{project.title}</h3>
+                <p className={styles.description}>{project.description}</p>
+                <div className={styles.links_box}>
+                  <a href={project.github_link} className={styles.github_link} target="_blank">Github</a>
+                  {project.website_link && <a href={project.website_link} className={styles.website_link} target="_blank">Link</a>}
+                </div>
+              </div>
+            </div>
+          )
+        })}
+        <div className={`${styles.chevron_box} ${styles.backward}`} onClick={previousBanner}>
           <div></div>
         </div>
-        <div className={`${styles.chevron_box} ${styles.backward}`} onClick={slideLeft}>
+        <div className={`${styles.chevron_box} ${styles.forward}`} onClick={nextBanner}>
           <div></div>
         </div>
-        <SlideList />
       </div>
       <div className={styles.carousel}>
-        {
-          mainProjects.map((_, index) => {
-            if(index === 0) return <div className={styles.focus} key={index} onClick={() => changeCurrentBanner(index)}/>
-
-            return <div key={index} onClick={() => changeCurrentBanner(index)}/>
-          })
-        }
+        {mainProjects.map((_, index) =>( 
+            <div
+             className={index === 0 ? styles.focus : ''} 
+             key={index} 
+             onClick={() => changeCurrentBanner(index)}
+            />
+        ))}
       </div>
     </div>
   )

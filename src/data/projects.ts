@@ -1,7 +1,14 @@
-import { noteAppPhoto, pokemonGamePhoto, recipeSitePhoto, socialMediaPhoto } from "../assets/images";
+import { japaneseCountersPhoto, noteAppPhoto, pokemonGamePhoto, recipeSitePhoto, socialMediaPhoto } from "../assets/images";
 import { ProjectInfo } from "../types/data";
 
 export const mainProjects: ProjectInfo[] = [
+  {
+    title: 'Japanese counters',
+    description: 'Projeto inspirado no jogo counter punch na plataforma de ensino Renshuu. Site programado utilizando Next.js',
+    github_link: 'https://github.com/nichol20/japanese-counters',
+    website_link: 'https://japanese-counters.vercel.app/',
+    image: japaneseCountersPhoto
+  },
   {
     title: 'Social media',
     description: `Uma rede social para compartilhar seus interesses e interagir com postagens de outras pessoas. Um site utilizando tecnologias modernas como Docker, Nextjs, Typescript, Json web token, MongoDB e testada com ferramentas populares, tais como Cypress, Jest e React testing library.`,

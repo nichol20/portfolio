@@ -34,224 +34,134 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
 }
 
 /* --------------------- Main Projects --------------------- */
-.main_projects {
-  .banners {
-    position: relative;
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
-    padding: 0 30px;
+
+.banners_container {
+  position: relative;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  padding: 0 30px;
+  overflow: hidden;
+
+  @include media("desktop") {
+    width: 750px;
+    height: 210px;
+  }
+
+  @include media("tablet") {
+    width: 80%;
+    height: 350px;
+  }
+
+  @include media("phone") {
+    height: 400px;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  @include mixins.displayFlex(center, flex-start);
+  gap: 15px;
+  padding: 15px;
+  height: 100%;
+  width: 800px;
+  opacity: 0;
+  transition: .3s ease-out;
+  pointer-events: none;
+
+  @include media("desktop") {
+    width: 700px;
+  }
+
+  @include media("tablet") {
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+  }
+
+  &:first-child {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .photo_box {
+    @include mixins.displayFlex();
+    height: 100%;
+    border-radius: 10px;
+    max-width: 350px;
     overflow: hidden;
 
     @include media("desktop") {
-      width: 750px;
-      height: 200px;
+      max-width: 260px;
     }
 
     @include media("tablet") {
-      width: 80%;
-      height: 350px;
+      height: 200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @include media("phone") {
-      height: 400px;
-      width: 100%;
-      padding: 0;
+      max-width: 140px;
+      height: 100px;
     }
 
-    .chevron_box {
-      position: absolute;
-      background-color: colors.$dark-transparent-bg;
-      padding: 14px 4px;
-      z-index: 100;
-      cursor: pointer;
-      transition: .3s;
-      border-radius: 4px;
-      top: 100px;
-
-      @include media("desktop") {
-        top: 70px;
-      }
-
-
-      &:hover {
-        background-color: colors.$dark-transparent-bg-hover;
-      }
-
-      &.forward {
-        right: 0px;
-        padding-right: 2px;
-
-        
-        @include media("tablet") {
-          right: 5px;
-          padding-top: 10px;
-          padding-right: 0px;
-          padding-bottom: 10px;
-          padding-left: 2px
-        }
-      }
-
-      &.backward {
-        left: 0px;
-        padding-left: 2px;
-
-        @include media("tablet") {
-          left: 5px;
-          padding-top: 10px;
-          padding-right: 2px;
-          padding-bottom: 10px;
-          padding-left: 0px
-        }
-
-        div {
-          rotate: -180deg;
-        }
-      }
-
-      div {
-        width: 20px;
-        height: 20px;
-        background-image: url($chevron-image);
-        background-repeat: no-repeat;
-        background-position: center;
-        @include mixins.whiteFilter();
-      }
-    }
-
-  }
-
-  .carousel {
-    @include mixins.displayFlex();
-    gap: 5px;
-
-    div {
-      width: 10px;
-      height: 10px;
-      border-radius: 100%;
-      background-color: colors.$light-tranparent-bg;
-      cursor: pointer;
-      transition: .3s;
-
-      &:hover {
-        background-color: colors.$light-tranparent-bg-hover;
-      }
-
-      &.focus {
-        background-color: colors.$light-tranparent-bg-hover;
-      }
+    .photo {
+      height: 100%;
     }
   }
-}  
 
-/* --------------------- Slide List --------------------- */
-.slide_list {
-  position: absolute;
-  display: flex;
-  top: 0px;
-  left: 0px;
-  transition: .3s ease-out;
-  height: 100%;
-  padding-left: 30px;
-  
-  @include media("desktop") {
-    padding-left: 20px;
-  }
-  
-  @include media("tablet") {
-    width: calc(100% * 4);
-    padding-left: 10px;
-  }
-
-  .slide_item {
-    @include mixins.displayFlex(center, flex-start);
-    gap: 15px;
-    padding: 15px;
+  .info {
+    position: relative;
     height: 100%;
-    width: 800px;
-    margin-right: 100px;
-
-    @include media("desktop") {
-      width: 700px;
-      margin-right: 50px; 
-    }
+    width: 420px;
 
     @include media("tablet") {
-      flex-direction: column;
-      width: calc((100% / 4) - 20px);
-      margin-right: 20px; 
+      width: 100%;
     }
 
-    .photo_box {
-      @include mixins.displayFlex();
-      height: 100%;
-      border-radius: 10px;
-      max-width: 350px;
-      overflow: hidden;
+    .title {
+      color: colors.$primary-text;
+      font-size: 1.5em;
 
       @include media("desktop") {
-        max-width: 260px;
+        font-size: 1.2em;
       }
 
       @include media("tablet") {
-        height: 200px;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: center;
       }
 
       @include media("phone") {
-        max-width: 140px;
-        height: 100px;
-      }
-
-      .photo {
-        height: 100%;
+        font-size: 1em;
       }
     }
 
-    .info {
-      position: relative;
-      height: 100%;
-      width: 420px;
+    .description {
+      color: colors.$secondary-text;
+      font-size: 1em;
 
-      @include media("tablet") {
-        width: 100%;
+      @include media("desktop") {
+        font-size: .875em;
       }
 
-      .title {
-        color: colors.$primary-text;
-        font-size: 1.5em;
-
-        @include media("desktop") {
-          font-size: 1.2em;
-        }
-
-        @include media("tablet") {
-          text-align: center;
-        }
-
-        @include media("phone") {
-          font-size: 1em;
-        }
+      @include media("phone") {
+        font-size: .75em;
       }
+    }
 
-      .description {
-        color: colors.$secondary-text;
-        font-size: 1em;
+    .links_box {
+      position: absolute;
+      bottom: 0;
+      @include mixins.displayFlex(space-between);
+      width: 100%;
 
-        @include media("desktop") {
-          font-size: .875em;
-        }
-
-        @include media("phone") {
-          font-size: .75em;
-        }
-      }
-
-      .link {
-        position: absolute;
-        bottom: 0;
+      > a {
         font-size: 1.2em;
         text-decoration: none;
         color: colors.$primary-text;
@@ -272,6 +182,89 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
           bottom: -20px;
         }
       }
+    }
+  }
+}
+
+
+.chevron_box {
+  position: absolute;
+  background-color: colors.$dark-transparent-bg;
+  padding: 14px 4px;
+  z-index: 100;
+  cursor: pointer;
+  transition: .3s;
+  border-radius: 4px;
+  top: 100px;
+
+  @include media("desktop") {
+    top: 70px;
+  }
+
+
+  &:hover {
+    background-color: colors.$dark-transparent-bg-hover;
+  }
+
+  &.forward {
+    right: 0px;
+    padding-right: 2px;
+
+    
+    @include media("tablet") {
+      right: 5px;
+      padding-top: 10px;
+      padding-right: 0px;
+      padding-bottom: 10px;
+      padding-left: 2px
+    }
+  }
+
+  &.backward {
+    left: 0px;
+    padding-left: 2px;
+
+    @include media("tablet") {
+      left: 5px;
+      padding-top: 10px;
+      padding-right: 2px;
+      padding-bottom: 10px;
+      padding-left: 0px
+    }
+
+    div {
+      rotate: -180deg;
+    }
+  }
+
+  div {
+    width: 20px;
+    height: 20px;
+    background-image: url($chevron-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    @include mixins.whiteFilter();
+  }
+}
+
+.carousel {
+  @include mixins.displayFlex();
+  gap: 5px;
+
+  div {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: colors.$light-tranparent-bg;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      background-color: colors.$light-tranparent-bg-hover;
+    }
+
+    &.focus {
+      background-color: colors.$light-tranparent-bg-hover;
     }
   }
 }

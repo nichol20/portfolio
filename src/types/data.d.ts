@@ -10,6 +10,7 @@ export interface ProjectInfo {
   title: string
   description: string
   github_link: string
+  website_link?: string
   image: string
 }
 

@@ -1,7 +1,8 @@
-export { default as noteAppPhoto } from './note-app.png'
-export { default as pokemonGamePhoto } from './pokemon-game.png'
-export { default as recipeSitePhoto } from './recipe-site.png'
-export { default as socialMediaPhoto } from './social-media.png'
+export { default as noteAppPhoto } from './banners/note-app.png'
+export { default as pokemonGamePhoto } from './banners/pokemon-game.png'
+export { default as recipeSitePhoto } from './banners/recipe-site.png'
+export { default as socialMediaPhoto } from './banners/social-media.png'
+export { default as japaneseCountersPhoto } from './banners/japanese-counters.png'
 export { default as profilePhoto } from './nicholas.jpeg'
 
 export { default as mouseIcon } from './computer-mouse.svg'
