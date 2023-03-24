@@ -1,17 +1,17 @@
 @use './colors';
 @use './medias' as *;
 
-@mixin displayFlex($justifyContent: center, $alignItems: center) {
+@mixin display-flex($justifyContent: center, $alignItems: center) {
   display: flex;
   justify-content: $justifyContent;
   align-items: $alignItems;
 }
 
-@mixin whiteFilter() {
+@mixin white-filter() {
   filter: invert(99%) sepia(67%) saturate(195%) hue-rotate(116deg) brightness(114%) contrast(100%);
 }
 
-@mixin sectionStyle() {
+@mixin section-style() {
   width: 100%;
   min-height: min(100vh, 1000px);
   padding-top: 40px;
@@ -23,7 +23,7 @@
   .header {
     margin-bottom: 40px;
 
-    .section_title {
+    .sectionTitle {
       font-weight: 600;
       font-size: 2.5em;
       color: colors.$primary-text;
@@ -34,7 +34,7 @@
       }
     }
 
-    .section_subtitle {
+    .sectionSubtitle {
       font-weight: 600;
       font-size: 1.3em;
       color: colors.$secondary-text;
@@ -47,7 +47,7 @@
   }
 }
 
-@mixin popUp($status) {
+@mixin pop-up($status) {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);

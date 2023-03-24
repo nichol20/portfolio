@@ -4,7 +4,7 @@ import { ProjectInfo } from "../types/data";
 export const mainProjects: ProjectInfo[] = [
   {
     title: 'Japanese counters',
-    description: 'Projeto inspirado no jogo counter punch na plataforma de ensino Renshuu. Site programado utilizando Next.js',
+    description: 'Projeto inspirado no jogo counter punch da plataforma de ensino Renshuu. O objetivo é aprender os contadores japoneses de um modo divertido. Site programado utilizando NextJS, Typescript e Sass e implementado na vercel.',
     github_link: 'https://github.com/nichol20/japanese-counters',
     website_link: 'https://japanese-counters.vercel.app/',
     image: japaneseCountersPhoto

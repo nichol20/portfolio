@@ -1,96 +1,92 @@
-@use '../../styles/colors'; 
-@use '../../styles/mixins'; 
-@use '../../styles/medias' as *;
+@use '../../styles/' as *;
 
 $menu-icon: '../../assets/images/menu.svg';
 $close-icon: '../../assets/images/close.svg';
 
 .header {
   width: 100%;
-  @include mixins.displayFlex(flex-start);
-  background-color: colors.$primary-bg;
+  @include mixins-display-flex(flex-start);
+  background-color: $colors-primary-bg;
   padding: 10px 30px 5px 30px;
-  color: colors.$primary-text;
+  color: $colors-primary-text;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
 
-  @include media("desktop") {
+  @include medias-media("desktop") {
     padding: 10px 10px 5px 10px;
   }
+}
 
-  h2 {
-    width: 100%;
-    font-weight: 600;
-    cursor: pointer;
+h2 {
+  width: 100%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggleMenu {
+  position: fixed;
+  right: 14px;
+  top: 7px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: url($menu-icon);
+  background-repeat: no-repeat;
+  background-position: center; 
+  @include mixins-white-filter();
+  z-index: 1000;
+  display: none;
+
+  &.active {
+    background: url($close-icon)
   }
 
-  .nav_bar {
-    .toggle_menu {
-      position: fixed;
-      right: 14px;
-      top: 7px;
-      width: 35px;
-      height: 35px;
-      border: none;
-      background: url($menu-icon);
-      background-repeat: no-repeat;
-      background-position: center; 
-      @include mixins.whiteFilter();
-      z-index: 1000;
-      display: none;
+  &.active ~ .navList {
+    display: flex;
+  }
+
+  @include medias-media("tablet") {
+    display: block;
+  }
+}
+
+.navList {
+  @include mixins-display-flex();
+  gap: 15px;
+  list-style: none;
+  font-weight: 500;
+
+  @include medias-media("tablet") {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: $colors-primary-bg;
+    font-size: 1.5em;
+  }
+
+  .navItem {
+    white-space: nowrap;
+
+    .link {
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+      transition: .3s;
+      text-decoration: none;
+      color: $colors-primary-text;
+
+      &:hover {
+        color: #fff;
+      }
 
       &.active {
-        background: url($close-icon)
-      }
-
-      &.active ~ .nav_list {
-        display: flex;
-      }
-
-      @include media("tablet") {
-        display: block;
-      }
-    }
-
-    .nav_list {
-      @include mixins.displayFlex();
-      gap: 15px;
-      list-style: none;
-      font-weight: 500;
-
-      @include media("tablet") {
-        display: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-        background-color: colors.$primary-bg;
-        font-size: 1.5em;
-      }
-
-      .nav_item {
-        white-space: nowrap;
-
-        .link {
-          cursor: pointer;
-          border-bottom: 1px solid transparent;
-          transition: .3s;
-          text-decoration: none;
-          color: colors.$primary-text;
-  
-          &:hover {
-            color: #fff;
-          }
-  
-          &.active {
-            color: #fff;
-            border-color:#fff;
-          }
-        }
+        color: #fff;
+        border-color:#fff;
       }
     }
   }

@@ -1,82 +1,80 @@
-@use '../../styles/colors'; 
-@use '../../styles/mixins'; 
-@use '../../styles/medias' as *; 
+@use '../../styles/' as *; 
 
-.skills_section {
-  @include mixins.sectionStyle();
+.skillsSection {
+  @include mixins-section-style();
 }
 
 .content {
   width: 100%;
-  @include mixins.displayFlex();
+  @include mixins-display-flex();
   flex-direction: column;
   gap: 20px;
+}
 
-  .category_container {
-    width: 100%;
-    max-width: 1000px;
-    user-select: none;
+.categoryContainer {
+  width: 100%;
+  max-width: 1000px;
+  user-select: none;
 
-    .box {
-      @include mixins.displayFlex(flex-start);
-      gap: 15px;
-      cursor: pointer;
-      box-shadow: 0 15px 30px colors.$light-shadow;
-      z-index: 10;
-      position: relative;
-      padding: 5px 20px;
-      height: 60px;
+  &:has(> .list.active) .box .chevron_icon {
+    rotate: (-180deg);
+  }
+}
 
-      .title {
-        font-size: 1.5em;
-        color: colors.$primary-text;
-        font-weight: 500;
+.box {
+  @include mixins-display-flex(flex-start);
+  gap: 15px;
+  cursor: pointer;
+  box-shadow: 0 15px 30px $colors-light-shadow;
+  z-index: 10;
+  position: relative;
+  padding: 5px 20px;
+  height: 60px;
 
-        @include media("tablet") {
-          font-size: 1.2em;
-        }
-      }
+  .title {
+    font-size: 1.5em;
+    color: $colors-primary-text;
+    font-weight: 500;
 
-      img {
-        width: 40px;
-        height: 40px;
-        @include mixins.whiteFilter();
-
-        @include media("tablet") {
-          width: 30px;
-          height: 30px;
-        }
-      }
-
-      .chevron_icon {
-        margin-left: auto;
-        width: 30px;
-        height: 30px;
-        transition: .3s;
-
-        @include media("tablet") {
-          width: 20px;
-          height: 20px;
-        }
-      }
+    @include medias-media("tablet") {
+      font-size: 1.2em;
     }
+  }
 
-    .list {
-      @include mixins.displayFlex(flex-start, flex-start);
-      flex-direction: column;
-      background-color: colors.$primary-btn-bg; 
-      max-height: 0;
-      transition: max-height .35s ease-out;
-      overflow: hidden;
+  img {
+    width: 40px;
+    height: 40px;
+    @include mixins-white-filter();
 
-      &.active {
-        max-height: 1000px;
-        transition: max-height .35s ease-in;
-      }
+    @include medias-media("tablet") {
+      width: 30px;
+      height: 30px;
     }
+  }
 
-    &:has(> .list.active) .box .chevron_icon {
-      rotate: (-180deg);
+  .chevron_icon {
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    transition: .3s;
+
+    @include medias-media("tablet") {
+      width: 20px;
+      height: 20px;
     }
+  }
+}
+
+.list {
+  @include mixins-display-flex(flex-start, flex-start);
+  flex-direction: column;
+  background-color: $colors-primary-btn-bg; 
+  max-height: 0;
+  transition: max-height .35s ease-out;
+  overflow: hidden;
+
+  &.active {
+    max-height: 1000px;
+    transition: max-height .35s ease-in;
   }
 }

@@ -44,40 +44,39 @@ export const MainProjects = () => {
   }
   
   return (
-    <div className={styles.main_projects}>
-      <div className={styles.banners_container}>
-        {mainProjects.map((project, index) => {
-          return (
-            <div className={styles.banner} key={index}>
-              <div className={styles.photo_box}>
-                <img src={project.image} alt={project.title} className={styles.photo} />
-              </div>
-      
-              <div className={styles.info}>
-                <h3 className={styles.title}>{project.title}</h3>
-                <p className={styles.description}>{project.description}</p>
-                <div className={styles.links_box}>
-                  <a href={project.github_link} className={styles.github_link} target="_blank">Github</a>
-                  {project.website_link && <a href={project.website_link} className={styles.website_link} target="_blank">Link</a>}
-                </div>
+    <div className={styles.mainProjects}>
+      <div className={styles.bannersContainer}>
+        {mainProjects.map((project, index) => (
+          <div className={styles.banner} key={index}>
+            <div className={styles.photoBox}>
+              <img src={project.image} alt={project.title} className={styles.photo} />
+            </div>
+    
+            <div className={styles.info}>
+              <h3 className={styles.title}>{project.title}</h3>
+              <p className={styles.description}>{project.description}</p>
+              <div className={styles.linksBox}>
+                <a href={project.github_link} className={styles.githubLink} target="_blank">Github</a>
+                {project.website_link && 
+                <a href={project.website_link} className={styles.websiteLink} target="_blank">Link</a>}
               </div>
             </div>
-          )
-        })}
-        <div className={`${styles.chevron_box} ${styles.backward}`} onClick={previousBanner}>
+          </div>
+        ))}
+        <div className={`${styles.chevronBox} ${styles.backward}`} onClick={previousBanner}>
           <div></div>
         </div>
-        <div className={`${styles.chevron_box} ${styles.forward}`} onClick={nextBanner}>
+        <div className={`${styles.chevronBox} ${styles.forward}`} onClick={nextBanner}>
           <div></div>
         </div>
       </div>
       <div className={styles.carousel}>
-        {mainProjects.map((_, index) =>( 
-            <div
-             className={index === 0 ? styles.focus : ''} 
-             key={index} 
-             onClick={() => changeCurrentBanner(index)}
-            />
+        {mainProjects.map((_, index) => ( 
+          <div
+            className={index === 0 ? styles.focus : ''} 
+            key={index} 
+            onClick={() => changeCurrentBanner(index)}
+          />
         ))}
       </div>
     </div>

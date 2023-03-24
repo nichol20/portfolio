@@ -21,25 +21,19 @@ const icons: Icons = {
 
 export const LatestProjects = ({ repos }: LatestProjectsProps) => {
   return (
-    <div className={styles.latest_pojects}>
-      <ul className={styles.list}>
-        {
-          repos.map((repo, index) => {
-            return (
-              <li className={styles.item} key={index}>
-                <a href={repo.html_url} className={styles.link} target='_blank'>{repo.name}</a>
-                {
-                  (repo.language || icons[repo.language]) && (
-                    <div className={styles.language_box}>
-                      <img src={icons[repo.language]} alt={repo.name} />
-                      <span className={styles.language_name} >{repo.language}</span>
-                    </div>
-                  )
-                }
-              </li>
-            )
-          })
-        }
+    <div className={styles.latestProjects}>
+      <ul className={styles.latestProjectList}>
+        {repos.map((repo, index) => (
+          <li className={styles.item} key={index}>
+          <a href={repo.html_url} className={styles.link} target='_blank'>{repo.name}</a>
+            {(repo.language || icons[repo.language]) && (
+                <div className={styles.languageBox}>
+                  <img src={icons[repo.language]} alt={repo.name} />
+                  <span className={styles.languageName} >{repo.language}</span>
+                </div>
+              )}
+        </li>
+        ))}
       </ul>
     </div>
   )

@@ -1,41 +1,35 @@
-@use '../../styles/colors'; 
-@use '../../styles/mixins'; 
-@use '../../styles/medias' as *;
+@use '../../styles/' as *;
 
 $chevron-image: '../../assets/images/chevron-forward.svg';
 
-.projects_section {
-  @include mixins.sectionStyle();
+.projectsSection {
+  @include mixins-section-style();
 }
 
-.content {
-  .tabs {
-    @include mixins.displayFlex();
-    gap: 15px;
-    color: colors.$primary-text;
+.tabs {
+  @include mixins-display-flex();
+  gap: 15px;
+  color: $colors-primary-text;
 
-    span {
-      font-size: 1.2em;
-      cursor: pointer;
-      transition: .3s;
-      border-bottom: 1px solid transparent;
+  span {
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: .3s;
+    border-bottom: 1px solid transparent;
 
-      &:hover {
-        color: #fff;
-      }
-
-      &.active {
-        color: #fff;
-        border-color: #fff;
-      }
+    &:hover {
+      color: #fff;
     }
-  } 
-  
-}
 
+    &.active {
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+}
 /* --------------------- Main Projects --------------------- */
 
-.banners_container {
+.bannersContainer {
   position: relative;
   width: 900px;
   margin-left: auto;
@@ -44,18 +38,17 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
   padding: 0 30px;
   overflow: hidden;
 
-  @include media("desktop") {
+  @include medias-media("desktop") {
     width: 750px;
     height: 210px;
   }
 
-  @include media("tablet") {
+  @include medias-media("tablet") {
     width: 80%;
-    height: 350px;
+    height: 400px;
   }
 
-  @include media("phone") {
-    height: 400px;
+  @include medias-media("phone") {
     width: 100%;
     padding: 0;
   }
@@ -65,7 +58,7 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
   position: absolute;
   top: 0;
   left: 15px;
-  @include mixins.displayFlex(center, flex-start);
+  @include mixins-display-flex(center, flex-start);
   gap: 15px;
   padding: 15px;
   height: 100%;
@@ -74,11 +67,11 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
   transition: .3s ease-out;
   pointer-events: none;
 
-  @include media("desktop") {
+  @include medias-media("desktop") {
     width: 700px;
   }
 
-  @include media("tablet") {
+  @include medias-media("tablet") {
     flex-direction: column;
     width: 100%;
     left: 0;
@@ -88,108 +81,108 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
     opacity: 1;
     pointer-events: all;
   }
+}
 
-  .photo_box {
-    @include mixins.displayFlex();
+.photoBox {
+  @include mixins-display-flex();
+  height: 100%;
+  border-radius: 10px;
+  max-width: 350px;
+  overflow: hidden;
+
+  @include medias-media("desktop") {
+    max-width: 260px;
+  }
+
+  @include medias-media("tablet") {
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include medias-media("phone") {
+    max-width: 140px;
+    height: 100px;
+  }
+
+  .photo {
     height: 100%;
-    border-radius: 10px;
-    max-width: 350px;
-    overflow: hidden;
+  }
+}
 
-    @include media("desktop") {
-      max-width: 260px;
+.info {
+  position: relative;
+  height: 100%;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+
+  @include medias-media("tablet") {
+    width: 100%;
+  }
+
+  .title {
+    color: $colors-primary-text;
+    font-size: 1.5em;
+
+    @include medias-media("desktop") {
+      font-size: 1.2em;
     }
 
-    @include media("tablet") {
-      height: 200px;
-      margin-left: auto;
-      margin-right: auto;
+    @include medias-media("tablet") {
+      text-align: center;
     }
 
-    @include media("phone") {
-      max-width: 140px;
-      height: 100px;
-    }
-
-    .photo {
-      height: 100%;
+    @include medias-media("phone") {
+      font-size: 1em;
     }
   }
 
-  .info {
-    position: relative;
-    height: 100%;
-    width: 420px;
+  .description {
+    color: $colors-secondary-text;
+    font-size: 1em;
+    flex-grow: 1;
 
-    @include media("tablet") {
-      width: 100%;
+    @include medias-media("desktop") {
+      font-size: .875em;
     }
 
-    .title {
-      color: colors.$primary-text;
-      font-size: 1.5em;
-
-      @include media("desktop") {
-        font-size: 1.2em;
-      }
-
-      @include media("tablet") {
-        text-align: center;
-      }
-
-      @include media("phone") {
-        font-size: 1em;
-      }
-    }
-
-    .description {
-      color: colors.$secondary-text;
-      font-size: 1em;
-
-      @include media("desktop") {
-        font-size: .875em;
-      }
-
-      @include media("phone") {
-        font-size: .75em;
-      }
-    }
-
-    .links_box {
-      position: absolute;
-      bottom: 0;
-      @include mixins.displayFlex(space-between);
-      width: 100%;
-
-      > a {
-        font-size: 1.2em;
-        text-decoration: none;
-        color: colors.$primary-text;
-        border-bottom: 1px solid transparent;
-        transition: .3s;
-
-        &:hover {
-          border-color: colors.$primary-text;
-        }
-
-        @include media("desktop") {
-          font-size: 1em;
-          font-weight: bold;
-          letter-spacing: 1px;
-        }
-
-        @include media("tablet") {
-          bottom: -20px;
-        }
-      }
+    @include medias-media("phone") {
+      font-size: .75em;
     }
   }
 }
 
+.linksBox {
+  @include mixins-display-flex(space-between);
+  width: 100%;
 
-.chevron_box {
+  > a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: $colors-primary-text;
+    border-bottom: 1px solid transparent;
+    transition: .3s;
+
+    &:hover {
+      border-color: $colors-primary-text;
+    }
+
+    @include medias-media("desktop") {
+      font-size: 1em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    @include medias-media("tablet") {
+      bottom: -20px;
+    }
+  }
+}
+
+.chevronBox {
   position: absolute;
-  background-color: colors.$dark-transparent-bg;
+  background-color: $colors-dark-transparent-bg;
   padding: 14px 4px;
   z-index: 100;
   cursor: pointer;
@@ -197,13 +190,13 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
   border-radius: 4px;
   top: 100px;
 
-  @include media("desktop") {
+  @include medias-media("desktop") {
     top: 70px;
   }
 
 
   &:hover {
-    background-color: colors.$dark-transparent-bg-hover;
+    background-color: $colors-dark-transparent-bg-hover;
   }
 
   &.forward {
@@ -211,7 +204,7 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
     padding-right: 2px;
 
     
-    @include media("tablet") {
+    @include medias-media("tablet") {
       right: 5px;
       padding-top: 10px;
       padding-right: 0px;
@@ -224,7 +217,7 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
     left: 0px;
     padding-left: 2px;
 
-    @include media("tablet") {
+    @include medias-media("tablet") {
       left: 5px;
       padding-top: 10px;
       padding-right: 2px;
@@ -243,99 +236,100 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
     background-image: url($chevron-image);
     background-repeat: no-repeat;
     background-position: center;
-    @include mixins.whiteFilter();
+    @include mixins-white-filter();
   }
 }
 
 .carousel {
-  @include mixins.displayFlex();
+  @include mixins-display-flex();
   gap: 5px;
 
   div {
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background-color: colors.$light-tranparent-bg;
+    background-color: $colors-light-tranparent-bg;
     cursor: pointer;
     transition: .3s;
 
     &:hover {
-      background-color: colors.$light-tranparent-bg-hover;
+      background-color: $colors-light-tranparent-bg-hover;
     }
 
     &.focus {
-      background-color: colors.$light-tranparent-bg-hover;
+      background-color: $colors-light-tranparent-bg-hover;
     }
   }
 }
 
 /* --------------------- Latest Projects --------------------- */
-.latest_pojects {
+.latestProjects {
   padding-top: 30px;
-  .list {
-    margin-left: auto;
-    margin-right: auto;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 350px);
-    grid-template-rows: repeat(2, 100px);
-    gap: 10px;
-    justify-content: center;
+}
 
-    @include media("tablet") {
-      grid-template-columns: 280px;
-      grid-template-rows: repeat(4, 100px);
+.latestProjectList {
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
+  justify-content: center;
+
+  @include medias-media("tablet") {
+    grid-template-columns: 280px;
+    grid-template-rows: repeat(4, 100px);
+  }
+
+  @include medias-media("phone") {
+    grid-template-columns: 170px;
+    grid-template-rows: repeat(4, 70px);
+  }
+
+  .item {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    @include mixins-display-flex(center, flex-start);
+    padding-left: 40px;
+    flex-direction: column;
+    border: solid 1px $colors-secondary-text;
+    border-radius: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @include medias-media("phone") {
+      align-items: center;
+      padding: 0px;
     }
 
-    @include media("phone") {
-      grid-template-columns: 170px;
-      grid-template-rows: repeat(4, 70px);
-    }
+    .link {
+      color: #58a6ff;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
 
-    .item {
-      justify-self: center;
-      align-self: center;
-      width: 100%;
-      height: 100%;
-      @include mixins.displayFlex(center, flex-start);
-      padding-left: 40px;
-      flex-direction: column;
-      border: solid 1px colors.$secondary-text;
-      border-radius: 6px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-
-      @include media("phone") {
-        align-items: center;
-        padding: 0px;
-      }
-
-      .link {
-        color: #58a6ff;
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-
-        &:hover {
-          border-color: #58a6ff;
-        }
-      }
-
-      .language_box {
-        @include mixins.displayFlex(center, flex-end);
-        gap: 3px;
-        margin-top: 14px;
-
-        img {
-          width: 20px;
-          height: 20px;
-        }
-
-        .language_name {
-          color: colors.$secondary-text;
-          font-size: .875em;
-        }
+      &:hover {
+        border-color: #58a6ff;
       }
     }
+  }
+}
+
+.languageBox {
+  @include mixins-display-flex(center, flex-end);
+  gap: 3px;
+  margin-top: 14px;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .languageName {
+    color: $colors-secondary-text;
+    font-size: .875em;
   }
 }

@@ -42,7 +42,7 @@ export const Header = () => {
   }
 
   const closeMenu = () => {
-    const buttonEl = document.querySelector(`.${styles.toggle_menu}`)
+    const buttonEl = document.querySelector(`.${styles.toggleMenu}`)
     buttonEl?.classList.remove(styles.active)
   }
 
@@ -54,22 +54,18 @@ export const Header = () => {
     <header className={styles.header}>
       <h2>Nicholas</h2>
       
-      <nav className={styles.nav_bar}>
-        <button className={styles.toggle_menu} onClick={toggleMenu}></button>
-        <ul className={styles.nav_list}>
-          {
-            Object.keys(sections).map((sectionId, index) => {
-              return (
-                <li className={styles.nav_item} key={index}>
-                  <a
-                   href={`#${sectionId}`} 
-                   className={`${styles.link}`}
-                   onClick={closeMenu}
-                  >{sections[sectionId]}</a>
-                </li>
-              )
-            })
-          }
+      <nav className={styles.navBar}>
+        <button className={styles.toggleMenu} onClick={toggleMenu}></button>
+        <ul className={styles.navList}>
+          {Object.keys(sections).map((sectionId, index) => (
+            <li className={styles.navItem} key={index}>
+              <a
+               href={`#${sectionId}`} 
+               className={`${styles.link}`}
+               onClick={closeMenu}
+              >{sections[sectionId]}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

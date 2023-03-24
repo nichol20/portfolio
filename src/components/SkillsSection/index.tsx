@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { SkillListItem } from '../SkillListItem'
 
 import { codeSlashIcon, serverIcon, chevronDownIcon, chipIcon } from '../../assets/images'
@@ -54,13 +54,13 @@ export const SkillsSection = () => {
   }
 
   return (
-    <section className={styles.skills_section} id="skills">
+    <section className={styles.skillsSection} id="skills">
       <div className={styles.header}>
-        <h2 className={styles.section_title}>Habilidades</h2>
-        <h3 className={styles.section_subtitle}>Meus níveis de habilidades</h3>
+        <h2 className={styles.sectionTitle}>Habilidades</h2>
+        <h3 className={styles.sectionSubtitle}>Meus níveis de habilidades</h3>
       </div>
       <div className={styles.content}>
-        <div className={styles.category_container}>
+        <div className={styles.categoryContainer}>
           <div className={styles.box} onClick={toggleList}>
             <img src={codeSlashIcon} alt="code slash" />
             <span className={styles.title}>Frontend</span>
@@ -70,7 +70,7 @@ export const SkillsSection = () => {
             <FrontendList />
           </div>
         </div>
-        <div className={styles.category_container}>
+        <div className={styles.categoryContainer}>
           <div className={styles.box} onClick={toggleList}>
             <img src={serverIcon} alt="server" />
             <span className={styles.title}>Backend</span>
@@ -80,7 +80,7 @@ export const SkillsSection = () => {
             <BackendList />
           </div>
         </div>
-        <div className={styles.category_container}>
+        <div className={styles.categoryContainer}>
           <div className={styles.box} onClick={toggleList}>
             <img src={chipIcon} alt="chip" />
             <span className={styles.title}>General</span>

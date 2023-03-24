@@ -4,13 +4,13 @@ import styles from './style.module.scss'
 
 export const AboutSection = () => {
   return (
-    <section className={styles.about_section} id="about">
+    <section className={styles.aboutSection} id="about">
       <div className={styles.header}>
-        <h2 className={styles.section_title}>Sobre</h2>
-        <h3 className={styles.section_subtitle}>um pouco sobre mim</h3>
+        <h2 className={styles.sectionTitle}>Sobre</h2>
+        <h3 className={styles.sectionSubtitle}>um pouco sobre mim</h3>
       </div>
       <div className={styles.content}>
-        <div className={styles.text_box}>
+        <div className={styles.textBox}>
           <p>
             Eu sempre fui muito fã de jogos, então meu primeiro contato com a área de tecnologia foi através da criação de games, quando tentei criar os meus próprios utilizando Java e mais futuramente Unity &#40;plataforma de desenvolvimento&#41;.
           </p>
@@ -21,7 +21,7 @@ export const AboutSection = () => {
             Acredito no autodidatismo, e faz cerca de 1 ano desde que iniciei meus estudos em Desenvolvimento Web &#40;tanto Frontend quanto Backend&#41;. Hoje em dia busco minha primeira experiência profissional.
           </p>
         </div>
-        <div className={styles.social_medias}>
+        <div className={styles.socialMedias}>
           <ul className={styles.list}>
             <li className={styles.item}>
               <a
@@ -43,7 +43,7 @@ export const AboutSection = () => {
             </li>
           </ul>
         </div>
-        <a href={curriculumPdf} download className={styles.download_cv_link}>Download CV</a>
+        <a href={curriculumPdf} download className={styles.downloadCvLink}>Download CV</a>
       </div>
     </section>
   )

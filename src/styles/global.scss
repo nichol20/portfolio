@@ -1,4 +1,4 @@
-@use './colors';
+@use './' as *;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: colors.$primary-bg;
+  background-color: $colors-primary-bg;
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;

@@ -1,6 +1,4 @@
-@use '../../styles/colors'; 
-@use '../../styles/mixins'; 
-
+@use '../../styles/' as *;
 
 .skill {
   width: 100%;
@@ -8,21 +6,21 @@
 }
 
 .title {
-  @include mixins.displayFlex();
+  @include mixins-display-flex();
   width: 100%;
   
-  .logo_icon {
+  .logoIcon {
     width: 26px;
     height: 26px;
   }
 
   span {
     font-size: 1em;
-    color: colors.$secondary-text;
+    color: $colors-secondary-text;
     margin-left: 8px;
   }
 
-  .percentage_number {
+  .percentageNumber {
     margin-left: auto;
   }
 }
@@ -32,14 +30,14 @@
   border-radius: 8px;
   width: 100%;
   margin-top: 5px;
-  background-color: colors.$empty-bar;
+  background-color: $colors-empty-bar;
   position: relative;
 
   .percentage {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: colors.$filled-bar;
+    background-color: $colors-filled-bar;
     border-radius: 8px;
     height: 8px;
   }
