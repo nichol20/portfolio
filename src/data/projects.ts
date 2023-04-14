@@ -1,4 +1,4 @@
-import { japaneseCountersPhoto, noteAppPhoto, pokemonGamePhoto, recipeSitePhoto, socialMediaPhoto } from "../assets/images";
+import { japaneseCountersPhoto, noteAppPhoto, otakuInfoPhoto, pokemonGamePhoto, recipeSitePhoto, socialMediaPhoto } from "../assets/images";
 import { ProjectInfo } from "../types/data";
 
 export const mainProjects: ProjectInfo[] = [
@@ -8,6 +8,13 @@ export const mainProjects: ProjectInfo[] = [
     github_link: 'https://github.com/nichol20/japanese-counters',
     website_link: 'https://japanese-counters.vercel.app/',
     image: japaneseCountersPhoto
+  },
+  {
+    title: 'Otaku info',
+    description: 'Um website que mostra informações de animes ou mangás. Aplicação escrita utilizando NextJS, Typescript e Sass, e consome a api pública kitsu.',
+    github_link: 'https://github.com/nichol20/otaku-info',
+    website_link: 'https://otaku-info.vercel.app/',
+    image: otakuInfoPhoto
   },
   {
     title: 'Social media',

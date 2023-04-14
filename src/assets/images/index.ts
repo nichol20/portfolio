@@ -3,6 +3,7 @@ export { default as pokemonGamePhoto } from './banners/pokemon-game.png'
 export { default as recipeSitePhoto } from './banners/recipe-site.png'
 export { default as socialMediaPhoto } from './banners/social-media.png'
 export { default as japaneseCountersPhoto } from './banners/japanese-counters.png'
+export { default as otakuInfoPhoto } from './banners/otaku-info.png'
 export { default as profilePhoto } from './nicholas.jpeg'
 
 export { default as mouseIcon } from './computer-mouse.svg'
