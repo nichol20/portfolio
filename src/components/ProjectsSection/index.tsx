@@ -21,6 +21,10 @@ export const ProjectsSection = () => {
     setTab(event.currentTarget.id)
   }
 
+  const shouldShowProject = (name: string) => {
+    return !['nichol20', 'portfolio', 'portfolio-server'].includes(name)
+  }
+
   const Tabs = () => {
     if(tab === 'mainTab') return <MainProjects />
     else if(tab === 'latestTab') return <LatestProjects repos={latestRepos} />
@@ -28,18 +32,32 @@ export const ProjectsSection = () => {
   }
 
   useEffect(() => {
+    const controller = new AbortController()
+
     async function getRepos() {
-      const res = await fetch('https://api.github.com/users/nichol20/repos')
-      const data: Repository[] = await res.json()
-      const latest = data.sort((a, b) => {
-        if(a.name === 'nichol20') return 1
-        else if(b.name === 'nichol20') return -1
-        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-      }).slice(0, 4)
-      setLatestRepos(latest)
+      try {
+        const res = await fetch('https://api.github.com/users/nichol20/repos', { signal: controller.signal })
+        const data: Repository[] = await res.json()
+        const latest = data.sort((a, b) => {
+          if(!shouldShowProject(a.name)) return 1
+          else if(!shouldShowProject(b.name)) return -1
+          return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        }).slice(0, 4)
+        setLatestRepos(latest)
+      } catch (error: any) {
+        if(error.name === 'AbortError') {
+          
+        }
+      }
     }
 
-    getRepos()
+    if(latestRepos.length === 0) {
+      getRepos()
+    }
+
+    return () => {
+      controller.abort()
+    }
   }, [])
 
   return (
