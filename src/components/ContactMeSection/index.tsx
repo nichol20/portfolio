@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import axios from 'axios'
 
 import { mailIcon, phoneIcon, locationIcon } from '../../assets/images'
 import styles from './style.module.scss'
+import { ToastContainer, ToastRef } from '../ToastContainer'
 
 export const ContactMeSection = () => {
   const [ missingInformationError, setMissingInformationError ] = useState(false)
   const [ isSendingEmail, setIsSendingEmail ] = useState(false)
+  const toastRef = useRef<ToastRef>(null)
 
   const sendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -31,11 +33,11 @@ export const ContactMeSection = () => {
         message: formData.get('message')
       })
   
-      popUpSuccessMessage()
+      toastRef.current?.toast('Mensagem enviada com sucesso', 'Sucesso', 'success')
       setMissingInformationError(false)
       inputFields.forEach(inputEl => inputEl.value = '')
     } catch (error) {
-      popUpErrorMessage()
+      toastRef.current?.toast('Não foi possível enviar a mensagem', 'Erro no envio', 'error')
     }
     
     setIsSendingEmail(false)
@@ -45,26 +47,6 @@ export const ContactMeSection = () => {
     if(missingInformationError)
      return <span className={styles.missingInformationMessage}>Por favor preencha todos os campos</span>
     else return null
-  }
-
-  const popUpSuccessMessage = () => {
-    const successPopUpEl = (document.querySelector(`.${styles.successPopup}`) as HTMLDivElement)
-
-    successPopUpEl.classList.add(styles.active)
-
-    setTimeout(() => {
-      successPopUpEl.classList.remove(styles.active)
-    }, 3000)
-  }
-
-  const popUpErrorMessage = () => {
-    const errorPopUpEl = (document.querySelector(`.${styles.errorPopup}`) as HTMLDivElement)
-
-    errorPopUpEl.classList.add(styles.active)
-
-    setTimeout(() => {
-      errorPopUpEl.classList.remove(styles.active)
-    }, 3000)
   }
 
   return (
@@ -126,12 +108,7 @@ export const ContactMeSection = () => {
           </button>
         </form>
       </div>
-      <div className={styles.successPopup}>
-        Email enviado com sucesso
-      </div>
-      <div className={styles.errorPopup}>
-        Algo deu errado
-      </div>
+      <ToastContainer ref={toastRef}/>
     </section>
   )
 }

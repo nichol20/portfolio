@@ -121,11 +121,3 @@
     background-color: $colors-secondary-btn-bg-hover;
   }
 }
-
-.successPopup {
-  @include mixins-pop-up('success');
-}
-
-.errorPopup {
-  @include mixins-pop-up('error');
-}
