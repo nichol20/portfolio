@@ -17,10 +17,10 @@ export const SkillsSection = () => {
   const FrontendList = () => {
     const elementArray = Object.keys(frontend).map((key, index) => {
       return <SkillListItem
-       percentage={frontend[key].percentage}
-       logoIcon={frontend[key].icon}
-       name={frontend[key].name} 
-       key={index}
+        percentage={frontend[key].percentage}
+        logoIcon={frontend[key].icon}
+        name={frontend[key].name}
+        key={index}
       />
     })
 
@@ -30,10 +30,10 @@ export const SkillsSection = () => {
   const BackendList = () => {
     const elementArray = Object.keys(backend).map((key, index) => {
       return <SkillListItem
-       percentage={backend[key].percentage}
-       logoIcon={backend[key].icon}
-       name={backend[key].name} 
-       key={index}
+        percentage={backend[key].percentage}
+        logoIcon={backend[key].icon}
+        name={backend[key].name}
+        key={index}
       />
     })
 
@@ -43,10 +43,10 @@ export const SkillsSection = () => {
   const GeneralList = () => {
     const elementArray = Object.keys(general).map((key, index) => {
       return <SkillListItem
-       percentage={general[key].percentage}
-       logoIcon={general[key].icon}
-       name={general[key].name} 
-       key={index}
+        percentage={general[key].percentage}
+        logoIcon={general[key].icon}
+        name={general[key].name}
+        key={index}
       />
     })
 
@@ -64,7 +64,7 @@ export const SkillsSection = () => {
           <div className={styles.box} onClick={toggleList}>
             <img src={codeSlashIcon} alt="code slash" />
             <span className={styles.title}>Frontend</span>
-            <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon}/>
+            <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon} />
           </div>
           <div className={styles.list}>
             <FrontendList />
@@ -74,7 +74,7 @@ export const SkillsSection = () => {
           <div className={styles.box} onClick={toggleList}>
             <img src={serverIcon} alt="server" />
             <span className={styles.title}>Backend</span>
-            <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon}/>
+            <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon} />
           </div>
           <div className={styles.list}>
             <BackendList />
@@ -83,8 +83,8 @@ export const SkillsSection = () => {
         <div className={styles.categoryContainer}>
           <div className={styles.box} onClick={toggleList}>
             <img src={chipIcon} alt="chip" />
-            <span className={styles.title}>General</span>
-            <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon}/>
+            <span className={styles.title}>Geral</span>
+            <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon} />
           </div>
           <div className={styles.list}>
             <GeneralList />
