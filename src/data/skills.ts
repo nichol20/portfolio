@@ -1,4 +1,4 @@
-import { abcIcon, csharpIcon, cssIcon, cypressIcon, dockerIcon, expressjsIcon, gitIcon, htmlIcon, javaIcon, javascriptIcon, jestIcon, jwtIcon, linuxIcon, mongodbIcon, nextjsIcon, nginxIcon, nodejsIcon, postgresqlIcon, pythonIcon, rabbitmqIcon, reactIcon, redisIcon, reduxIcon, sassIcon, socketioIcon, testingLibraryIcon, typescriptIcon } from "../assets/images";
+import { abcIcon, csharpIcon, cssIcon, cypressIcon, dockerIcon, expressjsIcon, gitIcon, golangIcon, htmlIcon, javaIcon, javascriptIcon, jestIcon, jwtIcon, kubernetesIcon, linuxIcon, mongodbIcon, nextjsIcon, nginxIcon, nodejsIcon, postgresqlIcon, pythonIcon, rabbitmqIcon, reactIcon, redisIcon, reduxIcon, sassIcon, socketioIcon, testingLibraryIcon, typescriptIcon } from "../assets/images";
 import { SkillCategoryObject } from "../types/data";
 
 export const frontend: SkillCategoryObject = {
@@ -27,6 +27,11 @@ export const frontend: SkillCategoryObject = {
     name: 'NextJS',
     percentage: 75
   },
+  sass: {
+    icon: sassIcon,
+    name: 'SASS',
+    percentage: 60
+  },
   testingLibrary: {
     icon: testingLibraryIcon,
     name: 'Testing library',
@@ -36,11 +41,6 @@ export const frontend: SkillCategoryObject = {
     icon: cypressIcon,
     name: 'Cypress',
     percentage: 40
-  },
-  sass: {
-    icon: sassIcon,
-    name: 'SASS',
-    percentage: 45
   },
   redux: {
     icon: reduxIcon,
@@ -85,6 +85,11 @@ export const backend: SkillCategoryObject = {
     name: 'PostgreSQL',
     percentage: 40
   },
+  kubernetes: {
+    icon: kubernetesIcon,
+    name: 'Kubernetes',
+    percentage: 20
+  },
   nginx: {
     icon: nginxIcon,
     name: 'Nginx',
@@ -93,7 +98,7 @@ export const backend: SkillCategoryObject = {
 }
 
 export const general: SkillCategoryObject = {
-  abc: {
+  english: {
     icon: abcIcon,
     name: 'English',
     percentage: 80
@@ -107,6 +112,16 @@ export const general: SkillCategoryObject = {
     icon: gitIcon,
     name: 'GIT',
     percentage: 75
+  },
+  go: {
+    icon: golangIcon,
+    name: "Golang",
+    percentage: 50
+  },
+  python: {
+    icon: pythonIcon,
+    name: 'Python',
+    percentage: 50
   },
   socketio: {
     icon: socketioIcon,
@@ -128,21 +143,22 @@ export const general: SkillCategoryObject = {
     name: 'Jest',
     percentage: 40
   },
+  japanese: {
+    icon: abcIcon,
+    name: '日本語',
+    percentage: 30
+  },
   csharp: {
     icon: csharpIcon,
     name: 'C#',
-    percentage: 30
+    percentage: 20
   },
   java: {
     icon: javaIcon,
     name: 'Java',
     percentage: 20
   },
-  python: {
-    icon: pythonIcon,
-    name: 'Python',
-    percentage: 20
-  }
+
 }
 
 export default {
