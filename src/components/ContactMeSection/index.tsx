@@ -6,8 +6,8 @@ import styles from './style.module.scss'
 import { ToastContainer, ToastRef } from '../ToastContainer'
 
 export const ContactMeSection = () => {
-  const [ missingInformationError, setMissingInformationError ] = useState(false)
-  const [ isSendingEmail, setIsSendingEmail ] = useState(false)
+  const [missingInformationError, setMissingInformationError] = useState(false)
+  const [isSendingEmail, setIsSendingEmail] = useState(false)
   const toastRef = useRef<ToastRef>(null)
 
   const sendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -17,8 +17,8 @@ export const ContactMeSection = () => {
     const formData = new FormData(event.currentTarget)
     const inputFields: NodeListOf<HTMLInputElement | HTMLTextAreaElement> = document.querySelectorAll(`.${styles.fieldInput}`)
 
-    for(const pair of formData.entries()) {
-      if(pair[1].length === 0) {
+    for (const pair of formData.entries()) {
+      if (pair[1].toString().length === 0) {
         setMissingInformationError(true)
         setIsSendingEmail(false)
         return
@@ -32,20 +32,20 @@ export const ContactMeSection = () => {
         subject: formData.get('subject'),
         message: formData.get('message')
       })
-  
+
       toastRef.current?.toast('Mensagem enviada com sucesso', 'Sucesso', 'success')
       setMissingInformationError(false)
       inputFields.forEach(inputEl => inputEl.value = '')
     } catch (error) {
       toastRef.current?.toast('Não foi possível enviar a mensagem', 'Erro no envio', 'error')
     }
-    
+
     setIsSendingEmail(false)
   }
 
   const MissingInformationSpan = () => {
-    if(missingInformationError)
-     return <span className={styles.missingInformationMessage}>Por favor preencha todos os campos</span>
+    if (missingInformationError)
+      return <span className={styles.missingInformationMessage}>Por favor preencha todos os campos</span>
     else return null
   }
 
@@ -100,15 +100,15 @@ export const ContactMeSection = () => {
           </div>
           <MissingInformationSpan />
           <button
-           type='submit' 
-           className={styles.submitButton}
-           disabled={isSendingEmail}
+            type='submit'
+            className={styles.submitButton}
+            disabled={isSendingEmail}
           >
-            { isSendingEmail ? 'Carregando...' : 'Enviar' }
+            {isSendingEmail ? 'Carregando...' : 'Enviar'}
           </button>
         </form>
       </div>
-      <ToastContainer ref={toastRef}/>
+      <ToastContainer ref={toastRef} />
     </section>
   )
 }
