@@ -12,31 +12,31 @@ export const AboutSection = () => {
       <div className={styles.content}>
         <div className={styles.textBox}>
           <p>
-            Eu sempre fui muito fã de jogos, então meu primeiro contato com a área de tecnologia foi através da criação de games, quando tentei criar os meus próprios utilizando Java e mais futuramente Unity &#40;plataforma de desenvolvimento&#41;.
+            Desde muito cedo, sempre gostei muito de jogos, o que me levou a minha primeira incursão no mundo da tecnologia, explorando a criação de games usando Java e, mais tarde, a plataforma Unity de desenvolvimento.
           </p>
           <p>
-            Porém, estava curioso sobre outros assuntos e resolvi experimentar Web Development. A partir daí me apaxonei por estruturas e tecnologias complexas e decidi me aprofundar mais no assunto. 
+            Entretanto, minha curiosidade me levou a explorar outros horizontes, e foi assim que me aventurei no Desenvolvimento Web. Essa jornada me cativou com suas estruturas complexas e tecnologias inovadoras, o que me inspirou a mergulhar ainda mais fundo nesse campo.
           </p>
           <p>
-            Acredito no autodidatismo, e faz cerca de 1 ano desde que iniciei meus estudos em Desenvolvimento Web &#40;tanto Frontend quanto Backend&#41;. Hoje em dia busco minha primeira experiência profissional.
+            Desde do começo de 2022, tenho estado imerso em meus estudos de Desenvolvimento Web, tanto na frente do desenvolvimento (Frontend) quanto nos bastidores (Backend).
           </p>
         </div>
         <div className={styles.socialMedias}>
           <ul className={styles.list}>
             <li className={styles.item}>
               <a
-               href="https://github.com/nichol20" 
-               target="_blank" 
-               className={styles.link}
+                href="https://github.com/nichol20"
+                target="_blank"
+                className={styles.link}
               >
                 <img src={githubIcon} alt="github" />
               </a>
             </li>
             <li className={styles.item}>
               <a
-               href="https://www.linkedin.com/in/nicholas-nogueira-80a99322a/" 
-               target="_blank" 
-               className={styles.link}
+                href="https://www.linkedin.com/in/nicholas-nogueira-80a99322a/"
+                target="_blank"
+                className={styles.link}
               >
                 <img src={linkedinIcon} alt="linkedin" />
               </a>
