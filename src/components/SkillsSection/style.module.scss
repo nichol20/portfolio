@@ -66,8 +66,8 @@
 }
 
 .list {
-  @include mixins-display-flex(flex-start, flex-start);
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   background-color: $colors-primary-btn-bg; 
   max-height: 0;
   transition: max-height .35s ease-out;
@@ -76,5 +76,13 @@
   &.active {
     max-height: 1000px;
     transition: max-height .35s ease-in;
+  }
+
+  @include medias-media("tablet") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include medias-media("phone") {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

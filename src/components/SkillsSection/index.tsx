@@ -57,7 +57,7 @@ export const SkillsSection = () => {
     <section className={styles.skillsSection} id="skills">
       <div className={styles.header}>
         <h2 className={styles.sectionTitle}>Habilidades</h2>
-        <h3 className={styles.sectionSubtitle}>Meus níveis de habilidades</h3>
+        <h3 className={styles.sectionSubtitle}>algumas das minhas Habilidades</h3>
       </div>
       <div className={styles.content}>
         <div className={styles.categoryContainer}>

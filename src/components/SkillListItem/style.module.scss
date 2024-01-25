@@ -7,11 +7,12 @@
 
 .title {
   @include mixins-display-flex();
+  flex-direction: column;
   width: 100%;
   
   .logoIcon {
-    width: 26px;
-    height: 26px;
+    width: 48px;
+    height: 48px;
   }
 
   span {
