@@ -61,3 +61,16 @@
     background-color: $colors-secondary-btn-bg-hover;
   }
 }
+
+.aboutSection[data-theme="light"] {
+  .textBox {
+    color: $colors-primary-text-light;
+  }
+
+  .downloadCvLink {
+    background-color: $colors-secondary-btn-bg-light;
+    &:hover {
+      background-color: $colors-secondary-btn-bg-hover-light;
+    }
+  }
+}

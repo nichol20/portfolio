@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import { mainProjects } from '../../data/projects'
 
 import styles from './style.module.scss'
+import { ThemeContext } from '../../contexts/Theme'
 
 export const MainProjects = () => {
-  const [ currentBanner, setCurrentBanner ] = useState(0)
+  const { theme } = useContext(ThemeContext)
+  const [currentBanner, setCurrentBanner] = useState(0)
 
   const nextBanner = () => {
     const slides = (document.querySelectorAll(`.${styles.banner}`) as NodeListOf<HTMLLIElement>)
@@ -27,7 +29,7 @@ export const MainProjects = () => {
       (el as HTMLDivElement).classList.remove(styles.focus)
     })
 
-    ;(carouselEl.childNodes[index] as HTMLDivElement).classList.add(styles.focus)
+      ; (carouselEl.childNodes[index] as HTMLDivElement).classList.add(styles.focus)
   }
 
   const changeCurrentBanner = (newIndex: number) => {
@@ -42,23 +44,23 @@ export const MainProjects = () => {
       return newIndex
     })
   }
-  
+
   return (
-    <div className={styles.mainProjects}>
+    <div className={styles.mainProjects} data-theme={theme}>
       <div className={styles.bannersContainer}>
         {mainProjects.map((project, index) => (
           <div className={styles.banner} key={index}>
             <div className={styles.photoBox}>
               <img src={project.image} alt={project.title} className={styles.photo} />
             </div>
-    
+
             <div className={styles.info}>
               <h3 className={styles.title}>{project.title}</h3>
               <p className={styles.description}>{project.description}</p>
               <div className={styles.linksBox}>
                 <a href={project.github_link} className={styles.githubLink} target="_blank">Github</a>
-                {project.website_link && 
-                <a href={project.website_link} className={styles.websiteLink} target="_blank">Link</a>}
+                {project.website_link &&
+                  <a href={project.website_link} className={styles.websiteLink} target="_blank">Link</a>}
               </div>
             </div>
           </div>
@@ -71,10 +73,10 @@ export const MainProjects = () => {
         </div>
       </div>
       <div className={styles.carousel}>
-        {mainProjects.map((_, index) => ( 
+        {mainProjects.map((_, index) => (
           <div
-            className={index === 0 ? styles.focus : ''} 
-            key={index} 
+            className={index === 0 ? styles.focus : ''}
+            key={index}
             onClick={() => changeCurrentBanner(index)}
           />
         ))}

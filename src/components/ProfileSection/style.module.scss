@@ -117,3 +117,30 @@
     @include mixins-white-filter();
   }
 }
+
+.profile[data-theme="light"] {
+  .description {
+    color: $colors-primary-text-light;
+
+    .contactLink {
+      background: $colors-primary-btn-bg-light;
+      color: $colors-primary-text-light;
+
+      &:hover {
+        background: $colors-primary-btn-bg-hover-light;
+      }
+
+      img {
+        filter: none;
+      }
+    }
+  }
+
+  .scrolldownBox {
+    color: $colors-primary-text-light;
+    
+    img {
+      filter: none;
+    }
+  }
+}

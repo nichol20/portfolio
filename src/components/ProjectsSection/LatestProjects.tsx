@@ -2,6 +2,8 @@ import { Repository } from '../../types/data'
 
 import { cssIcon, golangIcon, htmlIcon, javaIcon, javascriptIcon, pythonIcon, typescriptIcon } from '../../assets/images'
 import styles from './style.module.scss'
+import { useContext } from 'react'
+import { ThemeContext } from '../../contexts/Theme'
 
 interface LatestProjectsProps {
   repos: Repository[]
@@ -22,8 +24,10 @@ const icons: Icons = {
 }
 
 export const LatestProjects = ({ repos }: LatestProjectsProps) => {
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <div className={styles.latestProjects}>
+    <div className={styles.latestProjects} data-theme={theme}>
       <ul className={styles.latestProjectList}>
         {repos.map((repo, index) => (
           <li className={styles.item} key={index}>

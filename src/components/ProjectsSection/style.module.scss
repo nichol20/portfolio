@@ -18,15 +18,33 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
     border-bottom: 1px solid transparent;
 
     &:hover {
-      color: #fff;
+      color: $colors-primary-text-hover;
     }
 
     &.active {
-      color: #fff;
-      border-color: #fff;
+      color: $colors-primary-text-hover;
+      border-color: $colors-primary-text-hover;
     }
   }
 }
+
+.projectsSection[data-theme="light"] {
+  .tabs {
+    color: $colors-primary-text-light;
+  
+    span {
+      &:hover {
+        color: $colors-primary-text-hover-light;
+      }
+  
+      &.active {
+        color: $colors-primary-text-hover-light;
+        border-color: $colors-primary-text-hover-light;
+      }
+    }
+  }
+}
+
 /* --------------------- Main Projects --------------------- */
 
 .bannersContainer {
@@ -262,6 +280,30 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
   }
 }
 
+.mainProjects[data-theme="light"] {
+  .info {
+    .title {
+      color: $colors-primary-text-light;
+    }
+
+    .description {
+      color: $colors-secondary-text-light;
+    }
+  }
+
+  .chevronBox {
+    background-color: $colors-dark-transparent-bg-light;
+
+    &:hover {
+      background-color: $colors-dark-transparent-bg-hover-light;
+    }
+  
+    div {
+      filter: none;
+    }
+  }
+}
+
 /* --------------------- Latest Projects --------------------- */
 .latestProjects {
   padding-top: 30px;
@@ -331,5 +373,19 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
   .languageName {
     color: $colors-secondary-text;
     font-size: .875em;
+  }
+}
+
+.latestProjects[data-theme="light"] {
+  .latestProjectList {
+    .item {
+      border-color: $colors-secondary-text-light;
+    }
+  }
+
+  .languageBox {
+    .languageName {
+      color: $colors-secondary-text-light;
+    }
   }
 }

@@ -6,6 +6,7 @@
   position: relative;
   @include mixins-display-flex();
   flex-direction: column;
+  background-color: $colors-primary-bg;
 
   @include medias-media("desktop") {
     gap: 100px;
@@ -14,4 +15,8 @@
   @include medias-media("tablet") {
     padding: 10px;
   }
+}
+
+.app[data-theme="light"] {
+  background-color: $colors-primary-bg-light;
 }

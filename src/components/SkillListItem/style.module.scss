@@ -18,28 +18,14 @@
   span {
     font-size: 1em;
     color: $colors-secondary-text;
-    margin-left: 8px;
-  }
-
-  .percentageNumber {
-    margin-left: auto;
   }
 }
 
-.bar {
-  height: 8px;
-  border-radius: 8px;
-  width: 100%;
-  margin-top: 5px;
-  background-color: $colors-empty-bar;
-  position: relative;
 
-  .percentage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $colors-filled-bar;
-    border-radius: 8px;
-    height: 8px;
+.skill[data-theme="light"] {
+  .title {  
+    span {
+      color: $colors-secondary-text-light;
+    }
   }
 }

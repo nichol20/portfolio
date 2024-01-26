@@ -57,7 +57,8 @@ h2 {
   gap: 15px;
   list-style: none;
   font-weight: 500;
-
+  background-color: $colors-primary-bg;
+  
   @include medias-media("tablet") {
     display: none;
     position: fixed;
@@ -66,7 +67,6 @@ h2 {
     width: 100%;
     height: 100vh;
     flex-direction: column;
-    background-color: $colors-primary-bg;
     font-size: 1.5em;
   }
 
@@ -81,12 +81,36 @@ h2 {
       color: $colors-primary-text;
 
       &:hover {
-        color: #fff;
+        color: $colors-primary-text-hover;
       }
 
       &.active {
-        color: #fff;
-        border-color:#fff;
+        color: $colors-primary-text-hover;
+        border-color:$colors-primary-text-hover;
+      }
+    }
+  }
+}
+
+.header[data-theme="light"] {
+  background-color: $colors-primary-bg-light;
+  color: $colors-primary-text-light;
+
+  .navList {
+    background-color: $colors-primary-bg-light;
+
+    .navItem {
+      .link {
+        color: $colors-primary-text-light;
+
+        &:hover {
+          color: $colors-primary-text-hover-light;
+        }
+  
+        &.active {
+          color: $colors-primary-text-hover-light;
+          border-color: $colors-primary-text-hover-light;
+        }
       }
     }
   }

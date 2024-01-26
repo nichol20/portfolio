@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { SkillListItem } from '../SkillListItem'
 
 import { codeSlashIcon, serverIcon, chevronDownIcon, chipIcon } from '../../assets/images'
 
 import styles from './style.module.scss'
 import { backend, frontend, general } from '../../data/skills'
+import { ThemeContext } from '../../contexts/Theme'
 
 export const SkillsSection = () => {
+  const { theme } = useContext(ThemeContext)
 
   const toggleList = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const listElement = (event.currentTarget.parentElement?.children[1] as HTMLDivElement)
@@ -54,7 +56,7 @@ export const SkillsSection = () => {
   }
 
   return (
-    <section className={styles.skillsSection} id="skills">
+    <section className={styles.skillsSection} id="skills" data-theme={theme}>
       <div className={styles.header}>
         <h2 className={styles.sectionTitle}>Habilidades</h2>
         <h3 className={styles.sectionSubtitle}>algumas das minhas Habilidades</h3>

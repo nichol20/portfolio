@@ -86,3 +86,21 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.skillsSection[data-theme="light"] {
+  .box {
+    box-shadow: 0 15px 30px $colors-light-shadow-light;
+  
+    .title {
+      color: $colors-primary-text-light;
+    }
+
+    img {
+      filter: none;
+    }
+  }
+
+  .list {
+    background-color: $colors-primary-btn-bg-light; 
+  }
+}

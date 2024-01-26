@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import styles from './style.module.scss'
+import { ThemeToggle } from '../ThemeToggle'
+import { ThemeContext } from '../../contexts/Theme'
 
 interface Sections {
   [id: string]: string
@@ -15,10 +17,11 @@ const sections: Sections = {
 }
 
 export const Header = () => {
+  const { theme } = useContext(ThemeContext)
 
   const changeSectionHighlightInHeader = () => {
     const sectionElements = document.querySelectorAll('section[id]')
-    
+
     sectionElements.forEach(sectionEl => {
       const headerOffset = 130
       const sectionHeight = (sectionEl as HTMLElement).offsetHeight
@@ -27,7 +30,7 @@ export const Header = () => {
 
       const navLink = document.querySelector(`a[href*=${sectionId}]`)
 
-      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         navLink?.classList.add(styles.active)
       } else {
         navLink?.classList.remove(styles.active)
@@ -51,21 +54,22 @@ export const Header = () => {
   }, [])
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-theme={theme}>
       <h2>Nicholas</h2>
-      
+
       <nav className={styles.navBar}>
         <button className={styles.toggleMenu} onClick={toggleMenu}></button>
         <ul className={styles.navList}>
           {Object.keys(sections).map((sectionId, index) => (
             <li className={styles.navItem} key={index}>
               <a
-               href={`#${sectionId}`} 
-               className={`${styles.link}`}
-               onClick={closeMenu}
+                href={`#${sectionId}`}
+                className={`${styles.link}`}
+                onClick={closeMenu}
               >{sections[sectionId]}</a>
             </li>
           ))}
+          <ThemeToggle />
         </ul>
       </nav>
     </header>

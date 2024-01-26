@@ -1,16 +1,19 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import axios from 'axios'
 
 import { mailIcon, phoneIcon, locationIcon } from '../../assets/images'
 import styles from './style.module.scss'
 import { ToastContainer, ToastRef } from '../ToastContainer'
+import { ThemeContext } from '../../contexts/Theme'
 
 export const ContactMeSection = () => {
+  const { theme } = useContext(ThemeContext)
   const [missingInformationError, setMissingInformationError] = useState(false)
   const [isSendingEmail, setIsSendingEmail] = useState(false)
   const toastRef = useRef<ToastRef>(null)
 
   const sendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
+    if (isSendingEmail) return
     event.preventDefault()
     setIsSendingEmail(true)
 
@@ -50,7 +53,7 @@ export const ContactMeSection = () => {
   }
 
   return (
-    <section className={styles.contactSection} id="contact">
+    <section className={styles.contactSection} id="contact" data-theme={theme}>
       <div className={styles.header}>
         <h2 className={styles.sectionTitle}>Me Contate</h2>
         <h3 className={styles.sectionSubtitle}>entre em contato</h3>

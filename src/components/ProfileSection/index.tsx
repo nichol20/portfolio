@@ -1,10 +1,14 @@
+import { useContext } from 'react'
 import { profilePhoto, sendIcon, mouseIcon, arrowDownIcon } from '../../assets/images'
 
 import styles from './style.module.scss'
+import { ThemeContext } from '../../contexts/Theme'
 
 export const ProfileSection = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <section className={styles.profile} id="profile">
+    <section className={styles.profile} id="profile" data-theme={theme}>
       <div className={styles.mainContent}>
         <div className={styles.description}>
           <h3 className={styles.greetings}>Olá, Eu sou o Nicholas</h3>

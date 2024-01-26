@@ -6,12 +6,11 @@
   margin: 0px;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  transition: 150ms background ease-in-out;
 }
 
 body {
-  background-color: $colors-primary-bg;
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  padding-bottom: 100px;
 }

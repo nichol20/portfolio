@@ -1,10 +1,14 @@
+import { useContext } from 'react'
 import { githubIcon, linkedinIcon } from '../../assets/images'
 import curriculumPdf from '../../assets/pdf/Nicholas-curriculo.pdf'
 import styles from './style.module.scss'
+import { ThemeContext } from '../../contexts/Theme'
 
 export const AboutSection = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <section className={styles.aboutSection} id="about">
+    <section className={styles.aboutSection} id="about" data-theme={theme}>
       <div className={styles.header}>
         <h2 className={styles.sectionTitle}>Sobre</h2>
         <h3 className={styles.sectionSubtitle}>um pouco sobre mim</h3>

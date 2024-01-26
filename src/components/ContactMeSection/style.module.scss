@@ -24,40 +24,40 @@
   @include medias-media('phone') {
     padding: 15px;
   }
+}
 
-  .contactInfo {
-    @include mixins-display-flex();
-    gap: 5px;
+.contactInfo {
+  @include mixins-display-flex();
+  gap: 5px;
 
-    .icon {
-      width: 30px;
-      height: 30px;
-      @include mixins-white-filter();
+  .icon {
+    width: 30px;
+    height: 30px;
+    @include mixins-white-filter();
+
+    @include medias-media('phone') {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .titleBox {
+    
+    h3 {
+      color: $colors-primary-text;
+      font-size: 1em;
 
       @include medias-media('phone') {
-        width: 20px;
-        height: 20px;
+        font-size: .875em;
       }
     }
 
-    .titleBox {
-      
-      h3 {
-        color: $colors-primary-text;
-        font-size: 1em;
+    span {
+      color: $colors-primary-text;
+      font-size: .875em;
 
-        @include medias-media('phone') {
-          font-size: .875em;
-        }
-      }
-
-      span {
-        color: $colors-primary-text;
-        font-size: .875em;
-
-        @include medias-media('phone') {
-          font-size: .750em;
-        }
+      @include medias-media('phone') {
+        font-size: .750em;
       }
     }
   }
@@ -119,5 +119,47 @@
 
   &:hover {
     background-color: $colors-secondary-btn-bg-hover;
+  }
+}
+
+.contactSection[data-theme="light"] {
+  .informationBox {
+    background-color: $colors-primary-btn-bg-light;
+  }
+
+  .contactInfo {
+    .icon {
+      filter: none;
+    }
+
+    .titleBox {
+      h3 {
+        color: $colors-primary-text-light;
+      }
+
+      span {
+        color: $colors-primary-text-light;
+      }
+    }
+  }
+
+  .field {
+    background-color: $colors-field-bg-light;
+
+    .fieldName {
+      color: $colors-field-text-light;
+    }
+  
+    .fieldInput {
+      color: $colors-field-text-light;
+    }
+  }
+
+  .submitButton {
+    background-color: $colors-secondary-btn-bg-light;
+  
+    &:hover {
+      background-color: $colors-secondary-btn-bg-hover-light;
+    }
   }
 }
