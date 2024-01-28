@@ -1,3 +1,10 @@
-export type LanguageCode = "pt" | "en" | "jp";
+export type LanguageCode = "pt" | "en" | "ja";
 
-export type Languages = LanguageCode[];
+export interface Language {
+  code: LanguageCode;
+  name: {
+    [code in LanguageCode]: string;
+  };
+}
+
+export type Languages = Language[];
