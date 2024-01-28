@@ -9,7 +9,6 @@ import { ProjectsSection } from './components/ProjectsSection'
 import { ThemeContext } from './contexts/Theme'
 
 import styles from './styles/App.module.scss'
-import i18next from 'i18next'
 
 function App() {
   const { theme } = useContext(ThemeContext)
