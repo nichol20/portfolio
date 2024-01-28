@@ -1,24 +1,28 @@
+import { LanguageCode } from "./language";
+
 export interface SkillCategoryObject {
   [skill: string]: {
-    icon: string
-    name: string
-    percentage: number
-  }
+    icon: string;
+    name: string;
+    percentage: number;
+  };
 }
 
 export interface ProjectInfo {
-  title: string
-  description: string
-  github_link: string
-  website_link?: string
-  image: string
+  title: string;
+  description: {
+    [code in LanguageCode]: string;
+  };
+  githubLink: string;
+  websiteLink?: string;
+  image: string;
 }
 
 export interface Repository {
-  name: string
-  created_at: string
-  updated_at: string
-  language: string
-  html_url: string
-  [field: string]: any
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  language: string;
+  html_url: string;
+  [field: string]: any;
 }

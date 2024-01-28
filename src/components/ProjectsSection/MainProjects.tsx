@@ -4,6 +4,8 @@ import { mainProjects } from '../../data/projects'
 
 import styles from './style.module.scss'
 import { ThemeContext } from '../../contexts/Theme'
+import i18next from 'i18next'
+import { LanguageCode } from '../../types/language'
 
 export const MainProjects = () => {
   const { theme } = useContext(ThemeContext)
@@ -56,11 +58,11 @@ export const MainProjects = () => {
 
             <div className={styles.info}>
               <h3 className={styles.title}>{project.title}</h3>
-              <p className={styles.description}>{project.description}</p>
+              <p className={styles.description}>{project.description[i18next.language as LanguageCode]}</p>
               <div className={styles.linksBox}>
-                <a href={project.github_link} className={styles.githubLink} target="_blank">Github</a>
-                {project.website_link &&
-                  <a href={project.website_link} className={styles.websiteLink} target="_blank">Link</a>}
+                <a href={project.githubLink} className={styles.githubLink} target="_blank">Github</a>
+                {project.websiteLink &&
+                  <a href={project.websiteLink} className={styles.websiteLink} target="_blank">Link</a>}
               </div>
             </div>
           </div>

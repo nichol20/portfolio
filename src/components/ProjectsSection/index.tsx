@@ -6,9 +6,11 @@ import { MainProjects } from './MainProjects'
 
 import styles from './style.module.scss'
 import { ThemeContext } from '../../contexts/Theme'
+import { useTranslation } from 'react-i18next'
 
 export const ProjectsSection = () => {
   const { theme } = useContext(ThemeContext)
+  const { t } = useTranslation()
   const [tab, setTab] = useState('mainTab')
   const [latestRepos, setLatestRepos] = useState<Repository[]>([])
 
@@ -65,13 +67,13 @@ export const ProjectsSection = () => {
   return (
     <section className={styles.projectsSection} id="projects" data-theme={theme}>
       <div className={styles.header}>
-        <h2 className={styles.sectionTitle}>Projetos</h2>
-        <h3 className={styles.sectionSubtitle}>alguns projetos</h3>
+        <h2 className={styles.sectionTitle}>{t("projects.title")}</h2>
+        <h3 className={styles.sectionSubtitle}>{t("projects.subtitle")}</h3>
       </div>
       <div className={styles.content}>
         <nav className={styles.tabs}>
-          <span className={styles.active} id="mainTab" onClick={handleTab}>Principais</span>
-          <span id="latestTab" onClick={handleTab}>Recentes</span>
+          <span className={styles.active} id="mainTab" onClick={handleTab}>{t("projects.tabs.main")}</span>
+          <span id="latestTab" onClick={handleTab}>{t("projects.tabs.recent")}</span>
         </nav>
         <Tabs />
       </div>

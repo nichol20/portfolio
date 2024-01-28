@@ -3,21 +3,21 @@ import { profilePhoto, sendIcon, mouseIcon, arrowDownIcon } from '../../assets/i
 
 import styles from './style.module.scss'
 import { ThemeContext } from '../../contexts/Theme'
+import { useTranslation } from 'react-i18next'
 
 export const ProfileSection = () => {
   const { theme } = useContext(ThemeContext)
+  const { t } = useTranslation()
 
   return (
     <section className={styles.profile} id="profile" data-theme={theme}>
       <div className={styles.mainContent}>
         <div className={styles.description}>
-          <h3 className={styles.greetings}>Olá, Eu sou o Nicholas</h3>
-          <span className={styles.text}>
-            Olá, sou o Nicholas, um apaixonado por tecnologia e estudo programação desde 2021. Minha jornada começou com a programação de jogos, que logo se expandiu para o desenvolvimento web e até me levou a explorar o fascinante mundo da inteligência artificial. Hoje, meu foco está em ser um Desenvolvedor de Software, por isso sigo estudando tecnologias como Typescript, React, Next.js, Node.js, SQL, MongoD, Docker, Golang, Python e outras.
-          </span>
+          <h3 className={styles.greetings}>{t("profile.greetings")}</h3>
+          <span className={styles.text}>{t("profile.introduction")}</span>
 
           <a href='#contact' className={styles.contactLink}>
-            <span>Me contate</span>
+            <span>{t("profile.contact_me")}</span>
             <img src={sendIcon} alt='send' />
           </a>
         </div>
@@ -28,7 +28,7 @@ export const ProfileSection = () => {
 
       <div className={styles.scrolldownBox}>
         <img src={mouseIcon} alt="mouse" className={styles.mouseIcon} />
-        <span>Role para baixo</span>
+        <span>{t("profile.scroll_down")}</span>
         <img src={arrowDownIcon} alt="arrow down" className={styles.arrowdownIcon} />
       </div>
     </section>

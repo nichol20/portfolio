@@ -3,21 +3,23 @@ import React, { useContext, useEffect } from 'react'
 import styles from './style.module.scss'
 import { ThemeToggle } from '../ThemeToggle'
 import { ThemeContext } from '../../contexts/Theme'
+import { useTranslation } from 'react-i18next'
 
 interface Sections {
   [id: string]: string
 }
 
-const sections: Sections = {
-  profile: "Perfil",
-  about: "Sobre",
-  skills: "Habilidades",
-  projects: "Projetos",
-  contact: "Contato"
-}
-
 export const Header = () => {
   const { theme } = useContext(ThemeContext)
+  const { t } = useTranslation()
+
+  const sections: Sections = {
+    profile: t("header.sections.profile"),
+    about: t("header.sections.about"),
+    skills: t("header.sections.skills"),
+    projects: t("header.sections.projects"),
+    contact: t("header.sections.contact")
+  }
 
   const changeSectionHighlightInHeader = () => {
     const sectionElements = document.querySelectorAll('section[id]')
@@ -55,7 +57,7 @@ export const Header = () => {
 
   return (
     <header className={styles.header} data-theme={theme}>
-      <h2>Nicholas</h2>
+      <h2>{t("header.title")}</h2>
 
       <nav className={styles.navBar}>
         <button className={styles.toggleMenu} onClick={toggleMenu}></button>

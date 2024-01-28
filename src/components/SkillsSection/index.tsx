@@ -6,6 +6,7 @@ import { codeSlashIcon, serverIcon, chevronDownIcon, chipIcon } from '../../asse
 import styles from './style.module.scss'
 import { backend, frontend, general } from '../../data/skills'
 import { ThemeContext } from '../../contexts/Theme'
+import { t } from 'i18next'
 
 export const SkillsSection = () => {
   const { theme } = useContext(ThemeContext)
@@ -58,14 +59,14 @@ export const SkillsSection = () => {
   return (
     <section className={styles.skillsSection} id="skills" data-theme={theme}>
       <div className={styles.header}>
-        <h2 className={styles.sectionTitle}>Habilidades</h2>
-        <h3 className={styles.sectionSubtitle}>algumas das minhas Habilidades</h3>
+        <h2 className={styles.sectionTitle}>{t("skills.title")}</h2>
+        <h3 className={styles.sectionSubtitle}>{t("skills.subtitle")}</h3>
       </div>
       <div className={styles.content}>
         <div className={styles.categoryContainer}>
           <div className={styles.box} onClick={toggleList}>
             <img src={codeSlashIcon} alt="code slash" />
-            <span className={styles.title}>Frontend</span>
+            <span className={styles.title}>{t("skills.category.frontend")}</span>
             <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon} />
           </div>
           <div className={styles.list}>
@@ -75,7 +76,7 @@ export const SkillsSection = () => {
         <div className={styles.categoryContainer}>
           <div className={styles.box} onClick={toggleList}>
             <img src={serverIcon} alt="server" />
-            <span className={styles.title}>Backend</span>
+            <span className={styles.title}>{t("skills.category.backend")}</span>
             <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon} />
           </div>
           <div className={styles.list}>
@@ -85,7 +86,7 @@ export const SkillsSection = () => {
         <div className={styles.categoryContainer}>
           <div className={styles.box} onClick={toggleList}>
             <img src={chipIcon} alt="chip" />
-            <span className={styles.title}>Geral</span>
+            <span className={styles.title}>{t("skills.category.general")}</span>
             <img src={chevronDownIcon} alt="chevron down" className={styles.chevron_icon} />
           </div>
           <div className={styles.list}>
