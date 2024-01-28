@@ -4,11 +4,12 @@
     position: relative;
 }
 
-.name {
+.title {
     padding: 8px 16px;
     line-height: 14px;
     font-size: 14px;
     text-wrap: nowrap;
+    cursor: pointer;
 
     &:hover {
         background-color: black;

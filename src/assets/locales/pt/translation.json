@@ -72,5 +72,8 @@
       "backend": "Backend",
       "general": "Geral"
     }
+  },
+  "language_selector": {
+    "dropdown_title": "Mudar idioma"
   }
 }

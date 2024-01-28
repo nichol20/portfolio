@@ -6,7 +6,7 @@ import { supportedLngs } from "../../data/languages";
 import styles from './style.module.scss'
 
 export const LanguageSelector = () => {
-    const { i18n } = useTranslation()
+    const { t, i18n } = useTranslation()
     const [open, setOpen] = useState(false)
 
     const handleMouseOver = (event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
@@ -25,7 +25,7 @@ export const LanguageSelector = () => {
     return (
         <div className={styles.languageSelector}>
             <div className={styles.languageDropdown} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                <div className={styles.name}>Change language</div>
+                <div className={styles.title}>{t("language_selector.dropdown_title")}</div>
                 {open && (
                     <ul className={styles.list}>
                         {supportedLngs.map((lng, i) => (
