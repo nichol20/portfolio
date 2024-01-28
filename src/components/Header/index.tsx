@@ -4,6 +4,7 @@ import styles from './style.module.scss'
 import { ThemeToggle } from '../ThemeToggle'
 import { ThemeContext } from '../../contexts/Theme'
 import { useTranslation } from 'react-i18next'
+import { LanguageSelector } from '../LanguageSelector'
 
 interface Sections {
   [id: string]: string
@@ -72,6 +73,7 @@ export const Header = () => {
             </li>
           ))}
           <ThemeToggle />
+          <LanguageSelector />
         </ul>
       </nav>
     </header>

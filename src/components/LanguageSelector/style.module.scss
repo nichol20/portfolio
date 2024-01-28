@@ -1,0 +1,48 @@
+@use '../../styles/' as *;
+
+.languageDropdown {
+    position: relative;
+}
+
+.name {
+    padding: 8px 16px;
+    line-height: 14px;
+    font-size: 14px;
+    text-wrap: nowrap;
+
+    &:hover {
+        background-color: black;
+    }
+
+    &::after {
+        border-bottom: 0;
+        border-left: 0.3em solid #0000;
+        border-right: 0.3em solid #0000;
+        border-top: 0.3em solid;
+        content: "";
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+    }
+}
+
+.list {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    box-shadow: 0 0 12px #000000;
+    list-style: none;
+    background-color: $colors-primary-bg;
+    min-width: 100%;
+}
+
+.item {
+    padding: 8px 18px;
+    font-size: 13px;
+    text-wrap: nowrap;
+    cursor: pointer;
+
+    &:hover {
+        background-color: black;
+    }
+}
