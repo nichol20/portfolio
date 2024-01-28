@@ -58,7 +58,7 @@ export const Header = () => {
 
   return (
     <header className={styles.header} data-theme={theme}>
-      <h2>{t("header.title")}</h2>
+      <h2 className={styles.title}>{t("header.title")}</h2>
 
       <nav className={styles.navBar}>
         <button className={styles.toggleMenu} onClick={toggleMenu}></button>
