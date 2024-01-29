@@ -1,42 +1,42 @@
 {
   "about": {
     "title": "について",
-    "subtitle": "a little about myself",
+    "subtitle": "私自身について少し",
     "description": {
-      "part1": "Since early on, I've always been a big fan of games, which led me to my first foray into the world of technology, exploring game development using Java, and later, the Unity development platform.",
-      "part2": "However, my curiosity led me to explore other avenues, and that's how I ventured into Web Development. This journey captivated me with its complex structures and innovative technologies, inspiring me to delve even deeper into this field.",
-      "part3": "Since the beginning of 2022, I've been immersed in my studies of Web Development, both on the front-end (Frontend) and behind the scenes (Backend)."
+      "part1": "幼少期から、私は常にゲームの大ファンでした。これが私の最初の技術世界への冒険につながり、Javaを使用したゲーム開発、そして後にUnity開発プラットフォームを探求することになりました。",
+      "part2": "しかし、私の好奇心は他の分野を探求することに導き、それが私がウェブ開発に足を踏み入れた経緯です。この旅は、その複雑な構造と革新的な技術によって私を魅了し、この分野にさらに深く没頭することを促しました。",
+      "part3": "2022年初頭から、私はウェブ開発の学習に没頭しており、フロントエンドとバックエンドの両方で活動しています。"
     }
   },
   "contact": {
-    "title": "私に連絡して",
-    "subtitle": "get in touch",
+    "title": "連絡する",
+    "subtitle": "私に連絡して",
     "information": {
-      "phone": "Phone",
-      "email": "Email",
-      "location": "Location"
+      "phone": "電話",
+      "email": "メール",
+      "location": "位置"
     },
     "form": {
-      "email": "Email",
-      "name": "Name",
-      "subject": "Subject",
-      "message": "Message",
+      "email": "メール",
+      "name": "名前",
+      "subject": "件名",
+      "message": "メッセージ",
       "submit_button": {
-        "send": "Send",
-        "loading": "loading..."
+        "send": "送信",
+        "loading": "読み込み中..."
       }
     },
     "errors": {
-      "missing_information": "Please fill in all fields"
+      "missing_information": "全ての項目に記入してください。"
     },
     "send_email": {
       "success": {
-        "message": "Message sent successfully",
-        "title": "Success"
+        "message": "送信に成功しました",
+        "title": "成功"
       },
       "error": {
-        "message": "Unable to send message",
-        "title": "Error in sending"
+        "message": "メッセージを送信できません",
+        "title": "送信エラー"
       }
     }
   },
@@ -52,25 +52,25 @@
   },
   "profile": {
     "greetings": "こんにちは、Nicholasです",
-    "introduction": "Hello, I'm Nicholas, a technology enthusiast who has been studying programming since 2021. My journey began with game development, which quickly expanded to web development and even led me to explore the fascinating world of artificial intelligence. Today, my focus is on becoming a Software Developer, so I continue studying technologies such as Typescript, React, Next.js, Node.js, SQL, MongoD, Docker, Golang, Python and others.",
+    "introduction": "こんにちは、私はNicholasです。2021年からプログラミングを勉強しているテクノロジー愛好家です。私の旅はゲーム開発から始まり、すぐにウェブ開発に広がり、さらには人工知能の魅力的な世界を探求することにつながりました。今日では、私の焦点はソフトウェア開発者になることであり、そのために、Typescript、React、Next.js、Node.js、SQL、MongoDB、Docker、Golang、Pythonなどの技術を勉強し続けています。",
     "contact_me": "連絡して",
     "scroll_down": "下へスクロール"
   },
   "projects": {
     "title": "プロジェクト",
-    "subtitle": "some projects",
+    "subtitle": "いくつかのプロジェクト",
     "tabs": {
-      "main": "Main",
-      "recent": "Recent"
+      "main": "主な",
+      "recent": "最近"
     }
   },
   "skills": {
     "title": "スキル",
-    "subtitle": "some of my skills",
+    "subtitle": "私のスキルの一部",
     "category": {
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "general": "General"
+      "frontend": "フロントエンド",
+      "backend": "バックエンド",
+      "general": "ジェネラル"
     }
   },
   "language_selector": {
