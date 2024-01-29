@@ -1,4 +1,4 @@
-@use '../../styles/' as *;
+@use './' as *;
 
 .toast_container {
   position: fixed;
@@ -33,6 +33,10 @@
     background-color: $colors-toast-error;
   }
 
+  &[data-status="warning"] {
+    background-color: $colors-toast-warning;
+  }
+
   &::after {
     content: "\00D7";
     position: absolute;
@@ -44,17 +48,23 @@
 
 .description {
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis; 
   color: $colors-toast-text;
-  max-height: 100px;
 
   h5 {
     font-size: 1.2em;
+
+    @include medias-media("tablet") {
+      font-size: 1em;
+    } 
   }
 
   span{
     font-size: 1em;
     white-space: normal;
+
+    @include medias-media("tablet") {
+      font-size: .75em;
+    }
   }
 }

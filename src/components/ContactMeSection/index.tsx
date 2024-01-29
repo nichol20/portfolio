@@ -3,16 +3,16 @@ import axios from 'axios'
 
 import { mailIcon, phoneIcon, locationIcon } from '../../assets/images'
 import styles from './style.module.scss'
-import { ToastContainer, ToastRef } from '../ToastContainer'
 import { ThemeContext } from '../../contexts/Theme'
 import { useTranslation } from 'react-i18next'
+import { ToastContext } from '../../contexts/Toast'
 
 export const ContactMeSection = () => {
   const { theme } = useContext(ThemeContext)
   const { t } = useTranslation()
   const [missingInformationError, setMissingInformationError] = useState(false)
   const [isSendingEmail, setIsSendingEmail] = useState(false)
-  const toastRef = useRef<ToastRef>(null)
+  const { toast } = useContext(ToastContext)
 
   const sendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     if (isSendingEmail) return
@@ -38,11 +38,19 @@ export const ContactMeSection = () => {
         message: formData.get('message')
       })
 
-      toastRef.current?.toast(t("contact.send_email.success.message"), t("contact.send_email.success.title"), 'success')
+      toast({
+        message: t("contact.send_email.success.message"),
+        title: t("contact.send_email.success.title"),
+        status: 'success'
+      })
       setMissingInformationError(false)
       inputFields.forEach(inputEl => inputEl.value = '')
     } catch (error) {
-      toastRef.current?.toast(t("contact.send_email.error.message"), t("contact.send_email.error.title"), 'error')
+      toast({
+        message: t("contact.send_email.error.message"),
+        title: t("contact.send_email.error.title"),
+        status: 'error'
+      })
     }
 
     setIsSendingEmail(false)
@@ -113,7 +121,6 @@ export const ContactMeSection = () => {
           </button>
         </form>
       </div>
-      <ToastContainer ref={toastRef} />
     </section>
   )
 }
