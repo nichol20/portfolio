@@ -43,7 +43,8 @@ export const LanguageSelector = () => {
                                 onClick={e => handleClick(e, lng.code)}
                                 className={styles.item}
                             >
-                                {`${lng.name[lng.code]} (${lng.name[i18n.language as LanguageCode]})`}
+                                {`${lng.name[lng.code]} ${lng.code !== i18n.language ? `(${lng.name[i18n.language as LanguageCode]})` : ""
+                                    }`}
                             </li>
                         ))}
                     </ul>
