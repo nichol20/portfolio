@@ -2,14 +2,16 @@ import { v4 as uuidv4 } from 'uuid';
 import { createContext, useState } from 'react'
 import styles from '../styles/Toast.module.scss'
 
-interface ToastData {
+export interface ToastData {
     title: string
     message: string
     status: 'success' | 'error' | 'warning'
     id: string
 }
 
-type ToastFunction = (toast: Omit<ToastData, "id">) => void
+export type Toast = Omit<ToastData, "id">
+
+type ToastFunction = (toast: Toast) => void
 
 export interface ToastContext {
     toast: ToastFunction
