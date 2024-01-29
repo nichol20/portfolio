@@ -4,8 +4,30 @@ import { useTranslation } from "react-i18next";
 import { LanguageCode } from "../../types/language";
 import { supportedLngs } from "../../data/languages";
 import styles from './style.module.scss'
-import { ToastContext } from "../../contexts/Toast";
+import { Toast, ToastContext } from "../../contexts/Toast";
 import { ThemeContext } from "../../contexts/Theme";
+
+type LanguageWarning = {
+    [code in LanguageCode]: Toast
+}
+
+const japaneseWarning: LanguageWarning = {
+    pt: {
+        title: "Atenção!",
+        message: 'A tradução em japonês não está completa e pode conter erros.',
+        status: "warning"
+    },
+    en: {
+        title: "Attention!",
+        message: 'The Japanese translation is not finished and may contain errors.',
+        status: "warning"
+    },
+    ja: {
+        title: "Attention!",
+        message: 'The Japanese translation is not finished and may contain errors.',
+        status: "warning"
+    }
+}
 
 export const LanguageSelector = () => {
     const { theme } = useContext(ThemeContext)
@@ -23,11 +45,7 @@ export const LanguageSelector = () => {
 
     const handleClick = (event: MouseEvent<HTMLLIElement, globalThis.MouseEvent>, code: LanguageCode) => {
         if (code === "ja") {
-            toast({
-                title: "Attention!",
-                message: 'The Japanese translation is not finalized and may contain errors. ',
-                status: "warning"
-            })
+            toast(japaneseWarning[i18n.language as LanguageCode])
         }
         i18n.changeLanguage(code)
         setOpen(false)
