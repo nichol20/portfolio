@@ -5,8 +5,10 @@ import { LanguageCode } from "../../types/language";
 import { supportedLngs } from "../../data/languages";
 import styles from './style.module.scss'
 import { ToastContext } from "../../contexts/Toast";
+import { ThemeContext } from "../../contexts/Theme";
 
 export const LanguageSelector = () => {
+    const { theme } = useContext(ThemeContext)
     const { t, i18n } = useTranslation()
     const [open, setOpen] = useState(false)
     const { toast } = useContext(ToastContext)
@@ -32,7 +34,7 @@ export const LanguageSelector = () => {
     }
 
     return (
-        <div className={styles.languageSelector}>
+        <div className={styles.languageSelector} data-theme={theme}>
             <div className={styles.languageDropdown} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                 <div className={styles.title}>{t("language_selector.dropdown_title")}</div>
                 {open && (
