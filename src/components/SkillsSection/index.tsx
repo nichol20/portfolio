@@ -6,10 +6,11 @@ import { codeSlashIcon, serverIcon, chevronDownIcon, chipIcon } from '../../asse
 import styles from './style.module.scss'
 import { backend, frontend, general } from '../../data/skills'
 import { ThemeContext } from '../../contexts/Theme'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 
 export const SkillsSection = () => {
   const { theme } = useContext(ThemeContext)
+  const { t } = useTranslation()
 
   const toggleList = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const listElement = (event.currentTarget.parentElement?.children[1] as HTMLDivElement)
