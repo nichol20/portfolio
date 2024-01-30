@@ -95,6 +95,11 @@ export const backend: SkillCategoryObject = {
     name: "ExpressJS",
     percentage: 65,
   },
+  jwt: {
+    icon: jwtIcon,
+    name: "Json web token",
+    percentage: 45,
+  },
   docker: {
     icon: dockerIcon,
     name: "Docker",
@@ -156,11 +161,6 @@ export const general: SkillCategoryObject = {
   socketio: {
     icon: socketioIcon,
     name: "Socket.io",
-    percentage: 45,
-  },
-  jwt: {
-    icon: jwtIcon,
-    name: "Json web token",
     percentage: 45,
   },
   linuxCommands: {
