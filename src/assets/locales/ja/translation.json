@@ -1,6 +1,6 @@
 {
   "about": {
-    "title": "について",
+    "title": "自己紹介",
     "subtitle": "私自身について少し",
     "description": {
       "part1": "幼少期から、私は常にゲームの大ファンでした。これが私の最初の技術世界への冒険につながり、Javaを使用したゲーム開発、そして後にUnity開発プラットフォームを探求することになりました。",
@@ -44,7 +44,7 @@
     "title": "Nicholas",
     "sections": {
       "profile": "プロフィール",
-      "about": "について",
+      "about": "自己紹介",
       "skills": "スキル",
       "projects": "プロジェクト",
       "contact": "連絡"
