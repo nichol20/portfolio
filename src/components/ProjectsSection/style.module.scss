@@ -291,6 +291,16 @@ $chevron-image: '../../assets/images/chevron-forward.svg';
     }
   }
 
+  .linksBox {
+    > a {
+      color: $colors-primary-text-light;
+  
+      &:hover {
+        border-color: $colors-primary-text-light;
+      }
+    }
+  }
+
   .chevronBox {
     background-color: $colors-dark-transparent-bg-light;
 
