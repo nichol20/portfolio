@@ -4,11 +4,22 @@ import {
   otakuInfoPhoto,
   pokemonGamePhoto,
   recipeSitePhoto,
+  rhythmicityPhoto,
   socialMediaPhoto,
 } from "../assets/images";
 import { ProjectInfo } from "../types/data";
 
 export const mainProjects: ProjectInfo[] = [
+  {
+    title: "Rhythmicity",
+    description: {
+      pt: "Rhythmicity é um app de música que permite aos usuários buscar e escutar faixas, acompanhar letras em tempo real e personalizar a fila de reprodução. O projeto envolve autenticação, armazenamento de dados, administração de microsserviços e integração de APIs e web scraping. Utiliza diversas tecnologias, como Golang, TypeScript, Protocol Buffers, Nginx, Docker, entre outras.",
+      en: "Rhythmicity is a music app that allows users to search and listen to tracks, follow lyrics in real-time, and customize the playback queue. The project involves authentication, data storage, microservices management, and integration with APIs and web scraping. It leverages various technologies, such as Golang, TypeScript, Protocol Buffers, Nginx, Docker, among others.",
+      ja: "Rhythmicityは、ユーザーが曲を検索して聴き、リアルタイムで歌詞を追いながら、再生キューをカスタマイズできる音楽アプリです。このプロジェクトは、認証、データストレージ、マイクロサービスの管理、APIおよびウェブスクレイピングの統合を含んでいます。Golang、TypeScript、Protocol Buffers、Nginx、Dockerなど、さまざまな技術が使用されています。"
+    },
+    githubLink: "https://github.com/nichol20/rhythmicity",
+    image: rhythmicityPhoto
+  },
   {
     title: "Japanese counters",
     description: {
