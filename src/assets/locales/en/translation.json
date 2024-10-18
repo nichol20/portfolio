@@ -52,7 +52,7 @@
   },
   "profile": {
     "greetings": "Hi, I'm Nicholas",
-    "introduction": "Hello, I'm Nicholas, a technology enthusiast who has been studying programming since 2021. My journey began with game development, which quickly expanded to web development and even led me to explore the fascinating world of artificial intelligence. Today, my focus is on becoming a Software Developer, so I continue studying technologies such as Typescript, React, Next.js, Node.js, SQL, MongoD, Docker, Golang, Python and others.",
+    "introduction": "Hello, I'm Nicholas, a technology enthusiast who has been studying programming since 2021. My journey began with game development, which quickly expanded to web development and even led me to explore the fascinating world of artificial intelligence. Today, my focus is on becoming a Software Developer, so I continue studying technologies such as Typescript, React, Next.js, Node.js, SQL, MongoDB, Docker, Golang, Python and others.",
     "contact_me": "Contact me",
     "scroll_down": "Scroll down"
   },
