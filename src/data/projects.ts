@@ -1,4 +1,5 @@
 import {
+  fctubePhoto,
   japaneseCountersPhoto,
   noteAppPhoto,
   otakuInfoPhoto,
@@ -19,6 +20,16 @@ export const mainProjects: ProjectInfo[] = [
     },
     githubLink: "https://github.com/nichol20/rhythmicity",
     image: rhythmicityPhoto
+  },
+  {
+    title: "FCTUBE",
+    description: {
+      pt: "O projeto consiste em um MVP de uma plataforma de streaming de vídeos semelhante ao YouTube, desenvolvido com tecnologias  Django, NGINX, Docker, Golang, RabbitMQ, Next.js, entre outras. A aplicação incorpora diversos recursos avançados, incluindo upload de arquivos em chunks, conversão de vídeos de MP4 para MPEG-DASH, simulação de um serviço de armazenamento, sistema de mensageria e muito mais.",
+      en: "The project consists of an MVP for a video streaming platform similar to YouTube, developed using technologies such as Django, NGINX, Docker, Golang, RabbitMQ, Next.js, among others. The application incorporates various advanced features, including chunked file uploads, video conversion from MP4 to MPEG-DASH, a simulated storage service, a messaging system, and much more.",
+      ja: "プロジェクトは、YouTubeに似た動画ストリーミングプラットフォームのMVP（Minimum Viable Product）で構成されており、Django、NGINX、Docker、Golang、RabbitMQ、Next.jsなどの技術を使用して開発されています。アプリケーションには、チャンクアップロード、MP4からMPEG-DASHへの動画変換、模擬ストレージサービス、メッセージングシステムなど、さまざまな高度な機能が組み込まれています。"
+    },
+    githubLink: "https://github.com/nichol20/fctube",
+    image: fctubePhoto
   },
   {
     title: "Japanese counters",
@@ -53,16 +64,6 @@ export const mainProjects: ProjectInfo[] = [
     image: socialMediaPhoto,
   },
   {
-    title: "Recipe site",
-    description: {
-      pt: "Um site para aprender receitas, ou criar uma conta usando Google ou Github e postar as suas próprias e avaliar de outras pessoas. Construído com React no front-end , express para as requisições no back-end e utilizando prisma ORM para armazenar as informações em um banco de dados SQLite.",
-      en: "A website for learning recipes, or creating an account using Google or Github to post your own recipes and evaluate others'. Built with React on the front-end, Express for handling requests on the back-end, and using Prisma ORM to store information in a SQLite database.",
-      ja: "レシピを学ぶためのウェブサイトで、GoogleやGithubを使用してアカウントを作成し、自分のレシピを投稿したり他の人のレシピを評価したりすることができます。フロントエンドにはReactを使用し、バックエンドのリクエストを処理するためにExpressを使用し、情報をSQLiteデータベースに保存するためにPrisma ORMを使用して構築されています。",
-    },
-    githubLink: "https://github.com/nichol20/recipe-site",
-    image: recipeSitePhoto,
-  },
-  {
     title: "Pokemon game",
     description: {
       pt: "Um clone básico do famoso jogo Pokémon com sistemas de batalhas e captura dos monstros. Aplicação escrita apenas com HTML, CSS e Javascript, e consome a API pública pokeapi.co.",
@@ -81,6 +82,16 @@ export const mainProjects: ProjectInfo[] = [
     },
     githubLink: "https://github.com/nichol20/notes_app",
     image: noteAppPhoto,
+  },
+  {
+    title: "Recipe site",
+    description: {
+      pt: "Um site para aprender receitas, ou criar uma conta usando Google ou Github e postar as suas próprias e avaliar de outras pessoas. Construído com React no front-end , express para as requisições no back-end e utilizando prisma ORM para armazenar as informações em um banco de dados SQLite.",
+      en: "A website for learning recipes, or creating an account using Google or Github to post your own recipes and evaluate others'. Built with React on the front-end, Express for handling requests on the back-end, and using Prisma ORM to store information in a SQLite database.",
+      ja: "レシピを学ぶためのウェブサイトで、GoogleやGithubを使用してアカウントを作成し、自分のレシピを投稿したり他の人のレシピを評価したりすることができます。フロントエンドにはReactを使用し、バックエンドのリクエストを処理するためにExpressを使用し、情報をSQLiteデータベースに保存するためにPrisma ORMを使用して構築されています。",
+    },
+    githubLink: "https://github.com/nichol20/recipe-site",
+    image: recipeSitePhoto,
   },
 ];
 

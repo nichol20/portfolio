@@ -7,6 +7,7 @@ export { default as japaneseCountersPhoto } from "./banners/japanese-counters.pn
 export { default as otakuInfoPhoto } from "./banners/otaku-info.png";
 export { default as rhythmicityPhoto } from './banners/rhythmicity.png'
 export { default as profilePhoto } from "./nicholas.jpeg";
+export { default as fctubePhoto } from "./banners/fctube.png"
 
 /* App */
 export { default as mouseIcon } from "./computer-mouse.svg";
