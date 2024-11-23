@@ -52,7 +52,7 @@
   },
   "profile": {
     "greetings": "こんにちは、Nicholasです",
-    "introduction": "こんにちは、私はNicholasです。2021年からプログラミングを勉強しているテクノロジー愛好家です。私の旅はゲーム開発から始まり、すぐにウェブ開発に広がり、さらには人工知能の魅力的な世界を探求することにつながりました。今日では、私の焦点はソフトウェア開発者になることであり、そのために、Typescript、React、Next.js、Node.js、SQL、MongoDB、Docker、Golang、Pythonなどの技術を勉強し続けています。",
+    "introduction": "こんにちは、私はNicholasです。2021年からプログラミングを勉強しているテクノロジー愛好家です。私の旅はゲーム開発から始まり、すぐにウェブ開発に広がり、さらには人工知能の魅力的な世界を探求することにつながりました。今日では、私の焦点はソフトウェア開発者になることであり、そのために、Kubernetes、Docker、Golang、Python、Typescript、Next.js、SQL、MongoDBなどの技術を勉強し続けています。",
     "contact_me": "連絡して",
     "scroll_down": "下へスクロール"
   },
