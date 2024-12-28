@@ -21,7 +21,6 @@ export const SkillsSection = () => {
   const FrontendList = () => {
     const elementArray = Object.keys(frontend).map((key, index) => {
       return <SkillListItem
-        percentage={frontend[key].percentage}
         logoIcon={frontend[key].icon}
         name={frontend[key].name}
         key={index}
@@ -34,7 +33,6 @@ export const SkillsSection = () => {
   const BackendList = () => {
     const elementArray = Object.keys(backend).map((key, index) => {
       return <SkillListItem
-        percentage={backend[key].percentage}
         logoIcon={backend[key].icon}
         name={backend[key].name}
         key={index}
@@ -47,7 +45,6 @@ export const SkillsSection = () => {
   const GeneralList = () => {
     const elementArray = Object.keys(general).map((key, index) => {
       return <SkillListItem
-        percentage={general[key].percentage}
         logoIcon={general[key].icon}
         name={general[key].name}
         key={index}

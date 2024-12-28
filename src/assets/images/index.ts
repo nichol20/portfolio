@@ -5,9 +5,9 @@ export { default as recipeSitePhoto } from "./banners/recipe-site.png";
 export { default as socialMediaPhoto } from "./banners/social-media.png";
 export { default as japaneseCountersPhoto } from "./banners/japanese-counters.png";
 export { default as otakuInfoPhoto } from "./banners/otaku-info.png";
-export { default as rhythmicityPhoto } from './banners/rhythmicity.png'
+export { default as rhythmicityPhoto } from "./banners/rhythmicity.png";
 export { default as profilePhoto } from "./nicholas.jpeg";
-export { default as fctubePhoto } from "./banners/fctube.png"
+export { default as fctubePhoto } from "./banners/fctube.png";
 
 /* App */
 export { default as mouseIcon } from "./computer-mouse.svg";
@@ -51,6 +51,9 @@ export { default as postgresqlIcon } from "./logos/postgresql.svg";
 export { default as rabbitmqIcon } from "./logos/rabbitmq.svg";
 export { default as redisIcon } from "./logos/redis.svg";
 export { default as nginxIcon } from "./logos/nginx.svg";
+export { default as nestjsIcon } from "./logos/nestjs.svg";
+export { default as djangoIcon } from "./logos/django.svg";
+export { default as kafkaIcon } from "./logos/apache-kafka.svg";
 
 //general
 export { default as gitIcon } from "./logos/git.svg";

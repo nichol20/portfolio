@@ -4,7 +4,6 @@ export interface SkillCategoryObject {
   [skill: string]: {
     icon: string;
     name: string;
-    percentage: number;
   };
 }
 

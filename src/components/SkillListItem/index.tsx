@@ -4,12 +4,11 @@ import styles from './style.module.scss'
 import { ThemeContext } from '../../contexts/Theme'
 
 interface SkillProps {
-  percentage: number
   name: string
   logoIcon: string
 }
 
-export const SkillListItem = ({ logoIcon, name, percentage }: SkillProps) => {
+export const SkillListItem = ({ logoIcon, name }: SkillProps) => {
   const { theme } = useContext(ThemeContext)
 
   return (
