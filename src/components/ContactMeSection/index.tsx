@@ -31,9 +31,8 @@ export const ContactMeSection = () => {
     }
 
     try {
-      await axios.post('https://nicholas-portfolio-server.onrender.com/email', {
+      await axios.post('https://portfolio-server-zeta-teal.vercel.app/', {
         email: formData.get('email'),
-        name: formData.get('name'),
         subject: formData.get('subject'),
         message: formData.get('message')
       })
@@ -89,7 +88,7 @@ export const ContactMeSection = () => {
             <img src={locationIcon} alt="phone" className={styles.icon} />
             <div className={styles.titleBox}>
               <h3>{t("contact.information.location")}</h3>
-              <span>são paulo, sp</span>
+              <span>Barro, CE</span>
             </div>
           </div>
         </div>
@@ -98,10 +97,6 @@ export const ContactMeSection = () => {
           <div className={styles.field}>
             <h4 className={styles.fieldName}>{t("contact.form.email")}</h4>
             <input type="text" name='email' className={styles.fieldInput} />
-          </div>
-          <div className={styles.field}>
-            <h4 className={styles.fieldName}>{t("contact.form.name")}</h4>
-            <input type="text" name='name' className={styles.fieldInput} />
           </div>
           <div className={styles.field}>
             <h4 className={styles.fieldName}>{t("contact.form.subject")}</h4>
