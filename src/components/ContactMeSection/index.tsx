@@ -45,7 +45,6 @@ export const ContactMeSection = () => {
       setMissingInformationError(false)
       inputFields.forEach(inputEl => inputEl.value = '')
     } catch (error) {
-      console.log(error)
       toast({
         message: t("contact.send_email.error.message"),
         title: t("contact.send_email.error.title"),
