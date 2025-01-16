@@ -31,7 +31,7 @@ export const ContactMeSection = () => {
     }
 
     try {
-      await axios.post('https://portfolio-server-zeta-teal.vercel.app/', {
+      await axios.post('https://portfolio-server-nichol20s-projects.vercel.app/', {
         email: formData.get('email'),
         subject: formData.get('subject'),
         message: formData.get('message')
@@ -45,6 +45,7 @@ export const ContactMeSection = () => {
       setMissingInformationError(false)
       inputFields.forEach(inputEl => inputEl.value = '')
     } catch (error) {
+      console.log(error)
       toast({
         message: t("contact.send_email.error.message"),
         title: t("contact.send_email.error.title"),
