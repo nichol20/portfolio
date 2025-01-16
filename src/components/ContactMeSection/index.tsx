@@ -31,7 +31,7 @@ export const ContactMeSection = () => {
     }
 
     try {
-      await axios.post('https://portfolio-server-nichol20s-projects.vercel.app/', {
+      await axios.post('https://portfolio-server-nichol20s-projects.vercel.app/email', {
         email: formData.get('email'),
         subject: formData.get('subject'),
         message: formData.get('message')
